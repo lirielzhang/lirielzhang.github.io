@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wenli Zhang | Digital Marketing & Content Analytics Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #6f5b4f;
+      --accent-soft: #efe8e3;
+      --dark: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(247, 245, 242, 0.95);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+    }
+
+    nav .links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 86px 0 64px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.05em;
+      color: var(--dark);
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      color: var(--dark);
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      color: var(--dark);
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      color: var(--dark);
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .hero-text {
+      max-width: 840px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 650;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    section {
+      padding: 54px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.04);
+    }
+
+    .card.soft {
+      background: #fbfaf8;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--card);
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1eee9;
+      color: var(--dark);
+      font-size: 13px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quote {
+      font-size: 22px;
+      line-height: 1.4;
+      color: var(--dark);
+      border-left: 4px solid var(--accent);
+      padding-left: 18px;
+      margin: 24px 0;
+    }
+
+    .metric {
+      font-size: 28px;
+      font-weight: 750;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      nav .links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .grid.two,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Wenli Zhang</div>
+        <div class="links">
+          <a href="#case">Featured Case</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Supporting Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Digital Marketing & Content Analytics Portfolio</span>
+        <h1>Turning audience data into content, CRM and campaign decisions.</h1>
+        <p class="hero-text">
+          I am a communication and media analytics graduate building toward Digital Marketing, Marketing Analyst and E-commerce Marketing roles in Hong Kong. This portfolio demonstrates how I connect audience insight, content strategy, SEO, CRM thinking, GA4-style measurement and dashboard reporting.
+        </p>
+        <div class="actions">
+          <a class="button" href="#case">View Featured Case Study</a>
+          <a class="button secondary" href="mailto:lirielzhang07@gmail.com">Contact Me</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="case">
+      <div class="container">
+        <span class="badge">Featured Case Study</span>
+        <h2>Data-driven Digital Growth Plan for Preface</h2>
+        <p class="section-intro">
+          <strong>Converting lifestyle audiences into learning community members.</strong> This self-initiated case study explores how Preface, a Hong Kong brand combining lifestyle, learning and community, can strengthen its digital journey from casual discovery to learning leads, event participation and repeat engagement.
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Project Objective</h3>
+            <p>
+              To design a digital marketing strategy that connects search, social content, CRM journey design and campaign measurement, helping casual audiences move toward clearer learning-related actions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Scope</h3>
+            <p>
+              Audience segmentation, brand/channel audit, SEO keyword mapping, campaign content strategy, CRM journey, GA4-style measurement planning and dashboard reporting.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote">
+          Core opportunity: connect lifestyle-driven discovery with a clearer learning conversion journey.
+        </div>
+
+        <div class="grid three">
+          <div class="card soft">
+            <h4>Business Problem</h4>
+            <p>Preface has multiple audience entry points across coffee, lifestyle, learning and community, but these touchpoints need a clearer digital path toward measurable conversion.</p>
+          </div>
+          <div class="card soft">
+            <h4>Marketing Goal</h4>
+            <p>Turn low-commitment interest from search and social channels into newsletter sign-ups, intro workshop registrations, event participation and repeat engagement.</p>
+          </div>
+          <div class="card soft">
+            <h4>Data Approach</h4>
+            <p>Use public brand observations, keyword mapping, simulated funnel data and dashboard reporting to demonstrate insight-to-action thinking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brand">
+      <div class="container">
+        <h2>1. Brand & Digital Touchpoint Snapshot</h2>
+        <p class="section-intro">
+          Preface is treated as a hybrid brand rather than a single-category business. This creates a useful case for digital marketing because different users may first discover the brand through lifestyle content, professional learning needs or community events.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Observation</th>
+              <th>Marketing Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Brand Positioning</td>
+              <td>Combines lifestyle, coffee, tech learning and community.</td>
+              <td>Can attract audiences through lifestyle content and convert them through learning-related offers.</td>
+            </tr>
+            <tr>
+              <td>Main Audiences</td>
+              <td>Young professionals, learners, community seekers and lifestyle visitors.</td>
+              <td>Different user groups require different content hooks and conversion paths.</td>
+            </tr>
+            <tr>
+              <td>Digital Touchpoints</td>
+              <td>Website, search, Instagram, LinkedIn, event/course pages.</td>
+              <td>Each channel should play a clearer role in awareness, lead capture or conversion.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="container">
+        <h2>2. Audience Segmentation</h2>
+        <p class="section-intro">
+          The segmentation avoids treating all users as the same. A lifestyle visitor may need low-commitment community content first, while a career switcher may respond better to clear learning outcomes, social proof and a structured workshop pathway.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th>Motivation</th>
+              <th>Pain Point</th>
+              <th>Entry Channel</th>
+              <th>Recommended Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lifestyle Visitors</td>
+              <td>Looking for a productive café, weekend space or community experience.</td>
+              <td>No clear learning intention yet.</td>
+              <td>Instagram, Google Search, lifestyle content.</td>
+              <td>Invite them to newsletter or light community events.</td>
+            </tr>
+            <tr>
+              <td>Skill Explorers</td>
+              <td>Curious about AI, coding or digital skills.</td>
+              <td>Unsure where to start.</td>
+              <td>Google Search, LinkedIn, blog content.</td>
+              <td>Offer beginner-friendly guide or free intro workshop.</td>
+            </tr>
+            <tr>
+              <td>Career Switchers</td>
+              <td>Want to improve employability and professional confidence.</td>
+              <td>Worry about time, difficulty and ROI.</td>
+              <td>SEO, LinkedIn, referrals.</td>
+              <td>Use clear course outcomes and learner proof.</td>
+            </tr>
+            <tr>
+              <td>Community Seekers</td>
+              <td>Want to meet like-minded people through learning events.</td>
+              <td>Unsure whether the event is relevant or comfortable.</td>
+              <td>Event pages, Instagram, referral.</td>
+              <td>Promote community events and participant stories.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="seo">
+      <div class="container">
+        <h2>3. SEO Keyword Mapping</h2>
+        <p class="section-intro">
+          SEO is used to capture active demand from users already searching for learning spaces, AI workshops or beginner-friendly digital skills training in Hong Kong. The keyword map connects search intent with suitable content, landing pages and calls to action.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Search Intent</th>
+              <th>Funnel Stage</th>
+              <th>Suggested Content / Page</th>
+              <th>CTA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AI workshop Hong Kong</td>
+              <td>Find local AI learning options.</td>
+              <td>Consideration</td>
+              <td>Beginner AI Workshop landing page.</td>
+              <td>Register free intro.</td>
+            </tr>
+            <tr>
+              <td>coding class for beginners HK</td>
+              <td>Find beginner-friendly coding classes.</td>
+              <td>Consideration</td>
+              <td>Beginner coding course page.</td>
+              <td>View course details.</td>
+            </tr>
+            <tr>
+              <td>tech workshop Hong Kong</td>
+              <td>Find local workshop or event.</td>
+              <td>Consideration</td>
+              <td>Workshop listing page.</td>
+              <td>Sign up.</td>
+            </tr>
+            <tr>
+              <td>AI tools for marketers</td>
+              <td>Learn practical skills.</td>
+              <td>Awareness</td>
+              <td>Blog or LinkedIn article.</td>
+              <td>Download guide.</td>
+            </tr>
+            <tr>
+              <td>café to work Hong Kong</td>
+              <td>Find a productive space.</td>
+              <td>Awareness</td>
+              <td>Blog: places to work and learn.</td>
+              <td>Join newsletter.</td>
+            </tr>
+            <tr>
+              <td>Preface AI workshop</td>
+              <td>Brand-specific action.</td>
+              <td>Conversion</td>
+              <td>Event or course page.</td>
+              <td>Register now.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid three" style="margin-top: 20px;">
+          <div class="card">
+            <h4>Content Idea 1</h4>
+            <p>How to Start Learning AI After Work in Hong Kong</p>
+          </div>
+          <div class="card">
+            <h4>Content Idea 2</h4>
+            <p>5 AI Tools Every Marketing Beginner Should Know</p>
+          </div>
+          <div class="card">
+            <h4>Content Idea 3</h4>
+            <p>What to Expect from Your First Tech Workshop</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="campaign">
+      <div class="container">
+        <h2>4. Campaign Strategy: Learn After Coffee</h2>
+        <p class="section-intro">
+          The campaign uses lifestyle-oriented content as an entry point and then guides users toward beginner-friendly learning actions, such as joining a free intro workshop or subscribing to learning-related updates.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Content Pillar</th>
+              <th>Role</th>
+              <th>Example Topic</th>
+              <th>CTA</th>
+              <th>KPI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lifestyle Hook</td>
+              <td>Attract casual interest.</td>
+              <td>A café where your weekend becomes productive.</td>
+              <td>Join newsletter.</td>
+              <td>Saves, clicks, sessions.</td>
+            </tr>
+            <tr>
+              <td>Skill Value</td>
+              <td>Build learning need.</td>
+              <td>AI tools marketers should know.</td>
+              <td>Download guide.</td>
+              <td>Landing page visits.</td>
+            </tr>
+            <tr>
+              <td>Community Proof</td>
+              <td>Reduce hesitation.</td>
+              <td>What happens in a beginner workshop?</td>
+              <td>Register intro session.</td>
+              <td>Sign-ups.</td>
+            </tr>
+            <tr>
+              <td>Conversion Push</td>
+              <td>Drive action.</td>
+              <td>Free intro workshop this weekend.</td>
+              <td>Sign up now.</td>
+              <td>Conversion rate.</td>
+            </tr>
+            <tr>
+              <td>Retention</td>
+              <td>Encourage return.</td>
+              <td>Next-step workshop for beginners.</td>
+              <td>Join next session.</td>
+              <td>Repeat sign-up.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="crm">
+      <div class="container">
+        <h2>5. CRM Journey</h2>
+        <p class="section-intro">
+          The CRM journey is designed to move users from first discovery to lead capture, conversion and repeat engagement. It recognises that not all users are ready to register for a workshop immediately.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>User Action</th>
+              <th>Brand Touchpoint</th>
+              <th>Message</th>
+              <th>KPI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Discover</td>
+              <td>Sees lifestyle or AI-related content.</td>
+              <td>Instagram / Google</td>
+              <td>Learn something new in a relaxed space.</td>
+              <td>Reach, sessions.</td>
+            </tr>
+            <tr>
+              <td>Engage</td>
+              <td>Visits blog or event page.</td>
+              <td>Website</td>
+              <td>Beginner-friendly content and clear value.</td>
+              <td>Engagement rate.</td>
+            </tr>
+            <tr>
+              <td>Lead Capture</td>
+              <td>Signs up for intro workshop or newsletter.</td>
+              <td>Landing page</td>
+              <td>Low-risk first step.</td>
+              <td>Sign-up rate.</td>
+            </tr>
+            <tr>
+              <td>Nurture</td>
+              <td>Receives follow-up content.</td>
+              <td>Email / WhatsApp</td>
+              <td>Skill benefit + social proof.</td>
+              <td>Open rate, click rate.</td>
+            </tr>
+            <tr>
+              <td>Convert</td>
+              <td>Registers for workshop or event.</td>
+              <td>Course / event page</td>
+              <td>Clear offer and CTA.</td>
+              <td>Conversion rate.</td>
+            </tr>
+            <tr>
+              <td>Retain</td>
+              <td>Joins another event or course.</td>
+              <td>CRM / community</td>
+              <td>Next-step recommendation.</td>
+              <td>Repeat participation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="measurement">
+      <div class="container">
+        <h2>6. GA4-style Measurement Plan</h2>
+        <p class="section-intro">
+          Since internal analytics data is not available, this section proposes a GA4-style measurement framework for tracking the campaign. The focus is on measurement thinking: what should be tracked, why it matters and how the marketing team can act on it.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Objective</th>
+              <th>Metric / Event</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drive qualified traffic</td>
+              <td>sessions, users, source / medium</td>
+              <td>Identify which channels bring relevant visitors.</td>
+            </tr>
+            <tr>
+              <td>Evaluate content quality</td>
+              <td>engaged sessions, scroll, CTA click</td>
+              <td>Understand whether content is holding attention.</td>
+            </tr>
+            <tr>
+              <td>Capture leads</td>
+              <td>newsletter_sign_up, intro_workshop_register</td>
+              <td>Measure lead generation.</td>
+            </tr>
+            <tr>
+              <td>Track conversions</td>
+              <td>workshop_registration, event_signup</td>
+              <td>Measure campaign success.</td>
+            </tr>
+            <tr>
+              <td>Compare channels</td>
+              <td>UTM campaign performance</td>
+              <td>Understand which source and content theme performs best.</td>
+            </tr>
+            <tr>
+              <td>Measure retention</td>
+              <td>returning users, repeat_event_signup</td>
+              <td>Track community and member potential.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card" style="margin-top: 20px;">
+          <h4>Example UTM</h4>
+          <p class="small">utm_source=instagram&utm_medium=social&utm_campaign=learn_after_coffee&utm_content=ai_tools_post</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="container">
+        <h2>7. Dashboard Mockup</h2>
+        <p class="section-intro">
+          A simple dashboard structure is proposed to help the marketing team monitor channel performance, funnel movement, content effectiveness and CRM outcomes.
+        </p>
+
+        <div class="grid four"></div>
+        <div class="grid three">
+          <div class="card">
+            <div class="metric">3,200</div>
+            <div class="metric-label">Sessions</div>
+          </div>
+          <div class="card">
+            <div class="metric">240</div>
+            <div class="metric-label">Newsletter Sign-ups</div>
+          </div>
+          <div class="card">
+            <div class="metric">96</div>
+            <div class="metric-label">Intro Workshop Registrations</div>
+          </div>
+          <div class="card">
+            <div class="metric">28</div>
+            <div class="metric-label">Paid Workshop Conversions</div>
+          </div>
+          <div class="card">
+            <div class="metric">620</div>
+            <div class="metric-label">Returning Users</div>
+          </div>
+          <div class="card">
+            <div class="metric">8.8%</div>
+            <div class="metric-label">Lead Conversion Rate</div>
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top: 20px;">
+          <div class="card">
+            <h4>Sample Insight</h4>
+            <p>Skill-value content may generate fewer impressions than lifestyle content, but it is expected to drive stronger sign-up intent.</p>
+          </div>
+          <div class="card">
+            <h4>Recommended Action</h4>
+            <p>Use lifestyle content for reach, then retarget engaged users with workshop benefits, social proof and a low-risk intro session CTA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Core Skills Demonstrated</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>Digital Marketing Strategy</h3>
+            <p>Problem framing, campaign planning, channel role definition and content-to-conversion journey design.</p>
+            <div class="tag-row">
+              <span class="tag">Campaign Strategy</span>
+              <span class="tag">Content Planning</span>
+              <span class="tag">Audience Insight</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>SEO & CRM Thinking</h3>
+            <p>Keyword mapping, search intent, landing page logic, lead capture, nurture flow and retention journey.</p>
+            <div class="tag-row">
+              <span class="tag">SEO</span>
+              <span class="tag">CRM</span>
+              <span class="tag">Funnel</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Analytics & Reporting</h3>
+            <p>GA4-style measurement plan, UTM logic, dashboard structure, insight-to-action reporting and data storytelling.</p>
+            <div class="tag-row">
+              <span class="tag">GA4</span>
+              <span class="tag">Dashboard</span>
+              <span class="tag">Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2>Supporting Analytics Work</h2>
+        <p class="section-intro">
+          These selected academic and self-initiated projects support the skills demonstrated in the main case study. They show hands-on experience with social media data, audience analysis, text processing, visual reporting and analytical thinking.
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <h3>AI-assisted RED Headline Optimisation</h3>
+            <p>
+              Collected and cleaned RED/Xiaohongshu post data using Python, Selenium and Pandas. Analysed high-engagement headline patterns and built a simple GPT-3.5-assisted headline generation prototype.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">A/B Testing Thinking</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>YouTube Audience Sentiment & Topic Analysis</h3>
+            <p>
+              Processed 20,000+ public YouTube comments from international media platforms. Conducted text cleaning, word frequency analysis, sentiment polarity analysis and topic interpretation.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Text Analysis</span>
+              <span class="tag">Sentiment</span>
+              <span class="tag">Audience Insight</span>
+              <span class="tag">Visual Reporting</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Network & Statistical Analysis Archive</h3>
+            <p>
+              Applied R, Gephi and visualisation methods to explore structured datasets, network relationships and group-level patterns. This work supports my ability to clean data and translate analysis into visual reports.
+            </p>
+            <div class="tag-row">
+              <span class="tag">R</span>
+              <span class="tag">Gephi</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Visualisation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-intro">
+          I am seeking Digital Marketing Executive / Officer, Marketing Analyst and E-commerce Marketing Assistant opportunities in Hong Kong.
+        </p>
+
+        <div class="card">
+          <p><strong>Email:</strong> <a href="mailto:lirielzhang07@gmail.com">lirielzhang07@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">www.linkedin.com/in/wenli-zhang-693ba2299</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Wenli Zhang. Digital Marketing & Content Analytics Portfolio.</p>
+    </div>
+  </footer>
+</body>
+</html>
