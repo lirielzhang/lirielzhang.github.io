@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preface Coffee & Wine Case Study | Wenli Zhang</title>
+  <style>
+    :root {
+      --bg: #06070b;
+      --panel: rgba(255, 255, 255, 0.075);
+      --panel2: rgba(255, 255, 255, 0.105);
+      --line: rgba(255, 255, 255, 0.14);
+      --text: #f7f7f2;
+      --muted: #abb4c0;
+      --accent: #9effc7;
+      --accent2: #8bc7ff;
+      --accent3: #e9d5ff;
+      --warning: #f6d38b;
+      --danger: #ffb4b4;
+      --radius: 26px;
+      --shadow: 0 28px 90px rgba(0,0,0,0.38);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 8% 6%, rgba(158, 255, 199, 0.22), transparent 25%),
+        radial-gradient(circle at 92% 10%, rgba(139, 199, 255, 0.20), transparent 28%),
+        radial-gradient(circle at 50% 88%, rgba(233, 213, 255, 0.15), transparent 32%),
+        linear-gradient(180deg, #06070b 0%, #10131b 48%, #06070b 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 78%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 7, 11, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 26px rgba(158, 255, 199, 0.38);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 76px 0 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--line);
+      color: #dfe6ee;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 1050px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+    }
+
+    .gradient {
+      color: transparent;
+      background: linear-gradient(120deg, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-copy {
+      max-width: 840px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 17px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 740;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.26);
+    }
+
+    .btn.primary {
+      border-color: rgba(158,255,199,0.45);
+      background: linear-gradient(135deg, rgba(158,255,199,0.22), rgba(139,199,255,0.18));
+      box-shadow: 0 0 35px rgba(158, 255, 199, 0.12);
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4.5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+    }
+
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at top right, rgba(158,255,199,0.13), transparent 35%);
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 850;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 23px;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .big-diagnosis {
+      border: 1px solid rgba(158,255,199,0.32);
+      background:
+        radial-gradient(circle at 15% 25%, rgba(158,255,199,0.18), transparent 28%),
+        radial-gradient(circle at 80% 70%, rgba(139,199,255,0.16), transparent 30%),
+        rgba(255,255,255,0.065);
+    }
+
+    .diagnosis-line {
+      margin-top: 16px;
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+      color: #dfe6ee;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .journey-step {
+      position: relative;
+      min-height: 205px;
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.075);
+      overflow: hidden;
+    }
+
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(158,255,199,0.13), transparent 55%);
+      opacity: 0.9;
+    }
+
+    .journey-step > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .journey-step::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 44%;
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 22px;
+      z-index: 2;
+    }
+
+    .journey-step:last-child::after {
+      content: "";
+    }
+
+    .num {
+      width: 30px;
+      height: 30px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #06100b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .journey-step h3 {
+      font-size: 16px;
+    }
+
+    .journey-step p {
+      font-size: 13px;
+    }
+
+    .loop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .loop-visual {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(158,255,199,0.18), transparent 45%),
+        rgba(255,255,255,0.05);
+    }
+
+    .orbit {
+      width: min(380px, 88vw);
+      aspect-ratio: 1 / 1;
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 50%;
+      position: relative;
+      box-shadow: inset 0 0 60px rgba(158,255,199,0.08);
+    }
+
+    .orbit-center {
+      position: absolute;
+      inset: 31%;
+      border-radius: 26px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(158,255,199,0.22), rgba(139,199,255,0.18));
+      border: 1px solid rgba(255,255,255,0.18);
+      font-weight: 820;
+      letter-spacing: -0.03em;
+    }
+
+    .node {
+      position: absolute;
+      width: 106px;
+      min-height: 58px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(7,8,12,0.76);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 760;
+      color: #e9edf3;
+    }
+
+    .node.n1 { top: -18px; left: 50%; transform: translateX(-50%); }
+    .node.n2 { right: -26px; top: 28%; }
+    .node.n3 { right: 10px; bottom: 8%; }
+    .node.n4 { left: 10px; bottom: 8%; }
+    .node.n5 { left: -26px; top: 28%; }
+
+    .metric {
+      font-size: 34px;
+      font-weight: 880;
+      letter-spacing: -0.05em;
+      color: var(--text);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    th {
+      color: #e9edf3;
+      background: rgba(255,255,255,0.09);
+      font-size: 13px;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.06);
+      margin-top: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 780;
+      color: var(--text);
+    }
+
+    details p {
+      margin-top: 12px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 42px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .journey {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .journey-step::after {
+        content: "";
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .loop {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .grid.two,
+      .grid.three,
+      .grid.four,
+      .journey {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 12px;
+      }
+
+      .node {
+        position: static;
+        width: auto;
+        margin: 8px;
+      }
+
+      .orbit {
+        border-radius: 28px;
+        height: auto;
+        aspect-ratio: auto;
+        padding: 18px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .orbit-center {
+        position: static;
+        min-height: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          <span>Wenli Zhang</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#journey">Journey</a>
+          <a href="#strategy">Strategy</a>
+          <a href="#measurement">Measurement</a>
+          <a href="#appendix">Appendix</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="pulse"></span> Featured Case Study</div>
+        <h1>Preface Coffee & Wine: <span class="gradient">Coffee-and-Learn Journey</span></h1>
+        <p class="hero-copy">
+          A remote digital journey audit and growth proposal for a Hong Kong Coffee-and-Learn lifestyle space. The case focuses on how PCW can turn tech-infused offline experience cues into measurable digital interaction, CRM follow-up and repeat engagement.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#journey">View Journey Framework ↓</a>
+          <a class="btn" href="index.html">← Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary">
+      <div class="container">
+        <div class="grid two">
+          <div class="card big-diagnosis">
+            <span class="label">Core Diagnosis</span>
+            <div class="diagnosis-line">
+              PCW does not lack experience assets. It needs a clearer offline-to-digital journey.
+            </div>
+            <p style="margin-top: 16px;">
+              The brand already has a refined space, Tech Dose cards, tech-themed cup sleeves, AI-Q and events. The central challenge is connecting these cues into trackable interaction, lead capture, CRM and repeat engagement.
+            </p>
+            <div class="chip-row">
+              <span class="chip">O2O Marketing</span>
+              <span class="chip">CRM</span>
+              <span class="chip">UGC Insight</span>
+              <span class="chip">GA4-style Events</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="label">Project Question</span>
+            <h3>How can Coffee-and-Learn become measurable?</h3>
+            <p>
+              PCW’s concept is not simply “a café selling courses.” It is better understood as an experience-led lifestyle-learning space. The proposal is to make the user path clearer: discover the brand, experience the space, interact with micro-learning, leave a digital signal, receive follow-up, and return for community or deeper learning.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Public Touchpoint Audit</span>
+              <span class="chip">Xiaohongshu / Instagram UGC</span>
+              <span class="chip">Simulated Metrics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="positioning">
+      <div class="container">
+        <div class="section-head">
+          <h2>Positioning Diagnosis</h2>
+          <p class="section-note">
+            The strategy is not to choose between café and tech-learning space. It is layered positioning.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <div class="card">
+            <span class="label">Entry Hook</span>
+            <h3>Café / Light Work / Lifestyle</h3>
+            <p>
+              A simple café-based entry point lowers the barrier for first-time users. However, PCW should avoid overpromising a quiet study or co-working environment.
+            </p>
+          </div>
+          <div class="card">
+            <span class="label">Differentiation</span>
+            <h3>Tech Dose / AI-Q / Learning Cues</h3>
+            <p>
+              Tech Dose cards, cup sleeves, QR prompts and AI-Q make the Coffee-and-Learn experience visible and more memorable than a normal café visit.
+            </p>
+          </div>
+          <div class="card">
+            <span class="label">Relationship</span>
+            <h3>Events / CRM / Repeat Visits</h3>
+            <p>
+              The deeper opportunity is to turn curiosity into newsletter sign-ups, salon participation, event engagement and repeat visits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pain">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pain Point Diagnosis</h2>
+          <p class="section-note">
+            Main issue first, supporting issues second. This keeps the case focused.
+          </p>
+        </div>
+
+        <div class="grid four">
+          <div class="card">
+            <span class="label">Main Pain Point</span>
+            <h3>Weak Offline-to-Digital Journey</h3>
+            <p>
+              In-store interest may not become measurable digital actions such as QR scans, AI-Q completion, newsletter sign-up or event registration.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label">Supporting Issue</span>
+            <h3>Complex Value Hierarchy</h3>
+            <p>
+              Coffee, wine, tech knowledge, AI-Q, events, courses and venue use can make the first-time user journey feel complex.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label">Supporting Issue</span>
+            <h3>Shallow Tech Touchpoints</h3>
+            <p>
+              Tech Dose and cup sleeves create memorability, but may remain passive if not connected to interaction or lead capture.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label">Supporting Issue</span>
+            <h3>Mixed UGC Expectations</h3>
+            <p>
+              Some users understand the tech-learning experience; others expect a quiet work/study café, which creates expectation risk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="container">
+        <div class="section-head">
+          <h2>Coffee-and-Learn Journey</h2>
+          <p class="section-note">
+            The core framework: from first touch to repeat relationship.
+          </p>
+        </div>
+
+        <div class="journey">
+          <div class="journey-step">
+            <div class="num">01</div>
+            <h3>Online Discovery</h3>
+            <p>Users discover PCW through Instagram, Xiaohongshu, Google or UGC.</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="num">02</div>
+            <h3>In-store Experience</h3>
+            <p>Users feel the refined tech-infused space and learning atmosphere.</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="num">03</div>
+            <h3>Micro-learning</h3>
+            <p>Users notice Tech Dose, cup sleeves or Today’s Tech Dose content.</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="num">04</div>
+            <h3>Interaction</h3>
+            <p>Users scan QR, take AI-Q, unlock insights or complete a playful quiz.</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="num">05</div>
+            <h3>Lead Capture</h3>
+            <p>Users subscribe, leave email/WhatsApp or receive AI-Q results.</p>
+          </div>
+
+          <div class="journey-step">
+            <div class="num">06</div>
+            <h3>Repeat Engagement</h3>
+            <p>Users join salons, revisit the store or explore deeper learning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="container">
+        <div class="section-head">
+          <h2>Experience Upgrade Strategy</h2>
+          <p class="section-note">
+            Not more “technology-looking” decoration. More visible, playful, interactive and trackable experience.
+          </p>
+        </div>
+
+        <div class="grid four">
+          <div class="card">
+            <span class="label">01</span>
+            <h3>Clarify Entry Message</h3>
+            <p>
+              Use easy but accurate acquisition hooks such as “a tech-inspired café for coffee, light work and ideas,” while avoiding misleading “quiet study café” promises.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label">02</span>
+            <h3>Upgrade In-store Tech</h3>
+            <p>
+              Add Today’s Tech Dose Wall, QR-based table prompts, clearer event cues and digital ordering prompts to make Coffee-and-Learn visible within 30 seconds.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label">03</span>
+            <h3>Make Learning Playful</h3>
+            <p>
+              Turn Tech Dose into collectible series and add Coffee-and-Learn Persona Quiz to make micro-learning more engaging, shareable and repeatable.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label">04</span>
+            <h3>Build CRM Loop</h3>
+            <p>
+              Connect AI-Q results, newsletter, salon invitations, event recaps and repeat-visit incentives into a follow-up journey after the café visit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="loop">
+      <div class="container">
+        <div class="section-head">
+          <h2>Offline-to-Digital Loop</h2>
+          <p class="section-note">
+            The strongest growth opportunity is to connect the physical coffee moment with a digital relationship.
+          </p>
+        </div>
+
+        <div class="loop">
+          <div class="card loop-visual">
+            <div class="orbit">
+              <div class="orbit-center">Coffee-and-Learn Loop</div>
+              <div class="node n1">Tech Dose Card</div>
+              <div class="node n2">QR Scan</div>
+              <div class="node n3">AI-Q / Quiz</div>
+              <div class="node n4">CRM Follow-up</div>
+              <div class="node n5">Salon / Repeat</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="label">How it works</span>
+            <h3>From passive attention to measurable action</h3>
+            <p>
+              A user may first notice a Tech Dose card or cup sleeve. Instead of ending there, the touchpoint should invite a QR scan, unlock a 1-minute insight, connect to AI-Q or a persona quiz, and offer a clear value exchange such as detailed results, free coffee redemption, newsletter access or event reminders.
+            </p>
+
+            <details>
+              <summary>Example CRM sequence</summary>
+              <p>
+                Day 0: User completes AI-Q and leaves email. Day 1: Receive AI-Q result and recommended Tech Dose. Day 3: Receive related salon invitation. Day 7: Receive weekly Coffee-and-Learn newsletter. Day 14: Receive next event or light workshop recommendation.
+              </p>
+            </details>
+
+            <details>
+              <summary>Why this matters</summary>
+              <p>
+                Without this loop, PCW may create a memorable one-time experience but lose the user after the visit. With the loop, offline curiosity becomes a trackable relationship.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="measurement">
+      <div class="container">
+        <div class="section-head">
+          <h2>Measurement Snapshot</h2>
+          <p class="section-note">
+            Since internal data is not available, this is a proposed GA4-style measurement framework.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <div class="card">
+            <div class="metric">680</div>
+            <div class="metric-label">Tech Dose QR Scans</div>
+          </div>
+          <div class="card">
+            <div class="metric">198</div>
+            <div class="metric-label">AI-Q Completions</div>
+          </div>
+          <div class="card">
+            <div class="metric">126</div>
+            <div class="metric-label">Newsletter / WhatsApp Opt-ins</div>
+          </div>
+          <div class="card">
+            <div class="metric">42</div>
+            <div class="metric-label">Event / Salon Sign-ups</div>
+          </div>
+          <div class="card">
+            <div class="metric">18%</div>
+            <div class="metric-label">Scan-to-Lead Rate</div>
+          </div>
+          <div class="card">
+            <div class="metric">12%</div>
+            <div class="metric-label">Repeat Engagement Rate</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Objective</th>
+                <th>Suggested GA4-style Event</th>
+                <th>Marketing Question</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Track offline-to-digital interaction</td>
+                <td>qr_scan, tech_dose_view</td>
+                <td>Are in-store touchpoints moving users from attention to action?</td>
+              </tr>
+              <tr>
+                <td>Measure playful engagement</td>
+                <td>AIQ_start, AIQ_complete, persona_quiz_complete</td>
+                <td>Which interactive format generates deeper engagement?</td>
+              </tr>
+              <tr>
+                <td>Capture leads</td>
+                <td>newsletter_sign_up, whatsapp_opt_in, result_unlock</td>
+                <td>Can curiosity become a contactable relationship?</td>
+              </tr>
+              <tr>
+                <td>Track community conversion</td>
+                <td>event_view, salon_signup, repeat_event_signup</td>
+                <td>Does the journey lead to community participation and repeat visits?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="appendix">
+      <div class="container">
+        <div class="section-head">
+          <h2>Appendix: Full Diagnosis Notes</h2>
+          <p class="section-note">
+            Kept short by default. Expand only when the reader wants detail.
+          </p>
+        </div>
+
+        <details>
+          <summary>Brand positioning diagnosis</summary>
+          <p>
+            PCW should be understood as a Coffee-and-Learn Hub rather than simply a café or a course-selling channel. It uses coffee and wine as low-pressure lifestyle entry points to introduce bite-sized tech knowledge, experiential learning, events and community engagement.
+          </p>
+        </details>
+
+        <details>
+          <summary>Public UGC insight</summary>
+          <p>
+            Public UGC suggests mixed customer perception. Some users recognise PCW’s tech-infused Coffee-and-Learn experience, while others approach it as a work/study-friendly café. The latter can be useful for acquisition, but it creates expectation risk if quiet seating, space availability, event booking or service flow does not match that use case.
+          </p>
+        </details>
+
+        <details>
+          <summary>Main strategic opportunity</summary>
+          <p>
+            The opportunity is to turn Coffee-and-Learn from a visible brand concept into a measurable customer journey: online discovery, in-store experience, micro-learning touchpoint, digital interaction, lead capture and CRM, and finally community or repeat engagement.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card">
+          <span class="label">Contact</span>
+          <h2>Wenli Zhang</h2>
+          <p>
+            Digital Marketing & Content Analytics<br />
+            Email: <a href="mailto:lirielzhang07@gmail.com">lirielzhang07@gmail.com</a><br />
+            LinkedIn: <a href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">www.linkedin.com/in/wenli-zhang-693ba2299</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Wenli Zhang. Remote Digital Journey Audit for Preface Coffee & Wine.
+    </div>
+  </footer>
+</body>
+</html>
