@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wenli Zhang | Digital Marketing & Content Analytics</title>
+  <style>
+    :root {
+      --bg: #07080c;
+      --bg2: #10131a;
+      --card: rgba(255, 255, 255, 0.075);
+      --card2: rgba(255, 255, 255, 0.11);
+      --line: rgba(255, 255, 255, 0.14);
+      --text: #f7f7f2;
+      --muted: #aeb6c2;
+      --soft: #d7dce6;
+      --accent: #9effc7;
+      --accent2: #8bc7ff;
+      --accent3: #e9d5ff;
+      --warm: #f6d38b;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(142, 199, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(158, 255, 199, 0.20), transparent 28%),
+        radial-gradient(circle at 50% 92%, rgba(233, 213, 255, 0.16), transparent 32%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 52%, #07080c 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 80%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 8, 12, 0.74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 26px rgba(158, 255, 199, 0.38);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 92px 0 76px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--soft);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 800px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 14px;
+      padding: 13px 18px;
+      font-size: 14px;
+      font-weight: 720;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(158, 255, 199, 0.22), rgba(139, 199, 255, 0.22));
+      border-color: rgba(158, 255, 199, 0.45);
+      box-shadow: 0 0 35px rgba(158, 255, 199, 0.12);
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(circle at top right, rgba(158, 255, 199, 0.16), transparent 35%);
+      pointer-events: none;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-card {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+      padding: 0;
+    }
+
+    .case-content {
+      padding: 32px;
+    }
+
+    .case-visual {
+      min-height: 360px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(158,255,199,0.25), transparent 24%),
+        radial-gradient(circle at 80% 70%, rgba(139,199,255,0.24), transparent 26%),
+        rgba(255,255,255,0.045);
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.035em;
+      line-height: 1.18;
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--soft);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .mini-flow {
+      display: grid;
+      gap: 10px;
+    }
+
+    .flow-item {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(7,8,12,0.34);
+      border-radius: 16px;
+      padding: 13px 14px;
+      font-size: 13px;
+      color: var(--soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .flow-item span {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .skill-card {
+      min-height: 210px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(158, 255, 199, 0.12);
+      border: 1px solid rgba(158, 255, 199, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .project-card {
+      min-height: 250px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 42px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .case-card,
+      .grid.two,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+
+      .case-visual {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        height: auto;
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      .case-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">
+          <span class="logo-mark"></span>
+          <span>Wenli Zhang</span>
+        </a>
+        <div class="nav-links">
+          <a href="#case">Featured Case</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="pulse"></span> Digital Marketing & Content Analytics Portfolio</div>
+        <h1>Turning messy brand signals into <span class="gradient">measurable customer journeys.</span></h1>
+        <p class="hero-copy">
+          I connect audience insight, content strategy, CRM thinking and marketing measurement to solve real digital growth problems. My work focuses on how brands move users from attention to action.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="preface-case.html">View Featured Case Study →</a>
+          <a class="btn" href="mailto:lirielzhang07@gmail.com">Email Me</a>
+          <a class="btn" href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="case">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Case</h2>
+          <p class="section-note">
+            A self-initiated strategy case built from public brand touchpoints, UGC observation and digital journey thinking.
+          </p>
+        </div>
+
+        <div class="card case-card">
+          <div class="case-content">
+            <span class="label">Remote Digital Journey Audit</span>
+            <h3>Preface Coffee & Wine: Coffee-and-Learn Growth Proposal</h3>
+            <p>
+              A digital marketing case study that diagnoses how PCW can turn its refined tech-infused café experience into QR interaction, AI-Q lead capture, CRM follow-up, event participation and repeat engagement.
+            </p>
+            <div class="tags">
+              <span class="tag">UGC Insight</span>
+              <span class="tag">Customer Journey</span>
+              <span class="tag">CRM</span>
+              <span class="tag">GA4 Measurement</span>
+              <span class="tag">O2O Marketing</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="preface-case.html">Open Case Study →</a>
+            </div>
+          </div>
+
+          <div class="case-visual">
+            <div class="mini-flow">
+              <div class="flow-item"><strong>Online Discovery</strong><span>01</span></div>
+              <div class="flow-item"><strong>In-store Experience</strong><span>02</span></div>
+              <div class="flow-item"><strong>Micro-learning Touchpoint</strong><span>03</span></div>
+              <div class="flow-item"><strong>Digital Interaction</strong><span>04</span></div>
+              <div class="flow-item"><strong>Lead Capture & CRM</strong><span>05</span></div>
+              <div class="flow-item"><strong>Community & Repeat</strong><span>06</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>What I Demonstrate</h2>
+          <p class="section-note">
+            The portfolio is designed to show applied marketing thinking, not just academic project summaries.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <div class="card skill-card">
+            <div class="icon">01</div>
+            <h3>Audience & UGC Insight</h3>
+            <p>Identify customer perception gaps from public user content, social posts and visible digital touchpoints.</p>
+            <div class="tags">
+              <span class="tag">Social Listening</span>
+              <span class="tag">User Insight</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <div class="icon">02</div>
+            <h3>Journey & CRM Strategy</h3>
+            <p>Design conversion paths from discovery to interaction, lead capture, follow-up and repeat engagement.</p>
+            <div class="tags">
+              <span class="tag">CRM</span>
+              <span class="tag">Funnel</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <div class="icon">03</div>
+            <h3>Measurement & Reporting</h3>
+            <p>Translate marketing actions into GA4-style events, UTM logic, dashboard metrics and insight-to-action reporting.</p>
+            <div class="tags">
+              <span class="tag">GA4</span>
+              <span class="tag">Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <h2>Supporting Work</h2>
+          <p class="section-note">
+            Selected analytics projects supporting the main case study.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <div class="card project-card">
+            <span class="label">Content Analytics</span>
+            <h3>AI-assisted RED Headline Optimisation</h3>
+            <p>
+              Collected and cleaned Xiaohongshu post data using Python, Selenium and Pandas; analysed high-engagement headline patterns and built a GPT-assisted headline prototype.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">A/B Thinking</span>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <span class="label">Audience Analytics</span>
+            <h3>YouTube Sentiment & Topic Analysis</h3>
+            <p>
+              Processed public YouTube comments from international media platforms; conducted text cleaning, word frequency, sentiment polarity and topic interpretation.
+            </p>
+            <div class="tags">
+              <span class="tag">Text Analysis</span>
+              <span class="tag">Sentiment</span>
+              <span class="tag">Visual Reporting</span>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <span class="label">Data Visualisation</span>
+            <h3>Network & Statistical Analysis Archive</h3>
+            <p>
+              Applied R, Gephi and visualisation methods to explore structured datasets, network relationships and group-level patterns.
+            </p>
+            <div class="tags">
+              <span class="tag">R</span>
+              <span class="tag">Gephi</span>
+              <span class="tag">Regression</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card">
+          <span class="label">Contact</span>
+          <h2>Open to Digital Marketing, Marketing Analyst and E-commerce Marketing roles in Hong Kong.</h2>
+          <p style="margin-top: 12px;">
+            Email: <a href="mailto:lirielzhang07@gmail.com">lirielzhang07@gmail.com</a><br />
+            LinkedIn: <a href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">www.linkedin.com/in/wenli-zhang-693ba2299</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Wenli Zhang. Digital Marketing & Content Analytics Portfolio.
+    </div>
+  </footer>
+</body>
+</html>
