@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wenli Zhang | Digital Marketing & Content Analytics Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #6f5b4f;
+      --accent-soft: #efe8e3;
+      --dark: #111827;
+      --ink: #25221f;
+      --green-soft: #edf2ea;
+      --tech-soft: #eef0f4;
+      --gold-soft: #f6eee0;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(111, 91, 79, 0.10), transparent 28%),
+        linear-gradient(180deg, #faf8f4 0%, var(--bg) 42%, #f4f1ec 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(247, 245, 242, 0.93);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    nav .logo {
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+    }
+
+    nav .links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 86px 0 64px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 650;
+      margin-bottom: 18px;
+    }
+
+    .badge.dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.055em;
+      color: var(--dark);
+      max-width: 980px;
+    }
+
+    h2 {
+      font-size: 31px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+      margin: 0 0 16px;
+      color: var(--dark);
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      color: var(--dark);
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      color: var(--dark);
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .hero-text {
+      max-width: 880px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 650;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    section {
+      padding: 56px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.04);
+    }
+
+    .card.soft {
+      background: #fbfaf8;
+    }
+
+    .card.tech {
+      background: linear-gradient(145deg, #ffffff 0%, #f3f5f5 100%);
+      border-color: #dfe3e4;
+    }
+
+    .card.gold {
+      background: var(--gold-soft);
+      border-color: #eadcc4;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .tag.tech {
+      background: var(--tech-soft);
+      color: #374151;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--card);
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1eee9;
+      color: var(--dark);
+      font-size: 13px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quote {
+      font-size: 22px;
+      line-height: 1.4;
+      color: var(--dark);
+      border-left: 4px solid var(--accent);
+      padding-left: 18px;
+      margin: 24px 0;
+    }
+
+    .callout {
+      border-radius: 24px;
+      padding: 28px;
+      background: linear-gradient(135deg, #1f2933 0%, #3d3630 100%);
+      color: white;
+      margin: 24px 0;
+    }
+
+    .callout p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 0;
+    }
+
+    .callout h3 {
+      color: white;
+    }
+
+    .mini-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 750;
+      margin-bottom: 8px;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .journey-step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 170px;
+    }
+
+    .journey-step::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 45%;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .journey-step:last-child::after {
+      content: "";
+    }
+
+    .journey-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: white;
+      font-size: 13px;
+      font-weight: 750;
+      margin-bottom: 10px;
+    }
+
+    .journey-step h4 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .journey-step p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .metric {
+      font-size: 28px;
+      font-weight: 750;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 1000px) {
+      .journey {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .journey-step::after {
+        content: "";
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      nav .links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .grid.two,
+      .grid.three,
+      .grid.four {
+        grid-template-columns: 1fr;
+      }
+
+      .journey {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Wenli Zhang</div>
+        <div class="links">
+          <a href="#case">Featured Case</a>
+          <a href="#journey">Journey</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Supporting Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Digital Marketing & Content Analytics Portfolio</span>
+        <h1>Turning messy brand signals into measurable customer journeys.</h1>
+        <p class="hero-text">
+          I am a communication and media analytics graduate building toward Digital Marketing, Marketing Analyst and E-commerce Marketing roles in Hong Kong. This portfolio demonstrates how I connect public user insight, positioning diagnosis, content strategy, CRM thinking, GA4-style measurement and dashboard reporting.
+        </p>
+        <div class="actions">
+          <a class="button" href="#case">View Featured Case Study</a>
+          <a class="button secondary" href="mailto:lirielzhang07@gmail.com">Contact Me</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="case">
+      <div class="container">
+        <span class="badge dark">Featured Case Study</span>
+        <h2>Remote Digital Journey Audit & Growth Proposal for Preface Coffee & Wine</h2>
+        <p class="section-intro">
+          <strong>Clarifying the Coffee-and-Learn experience from online discovery to community engagement.</strong>
+          This self-initiated case study audits PCW’s publicly visible digital touchpoints and user-generated content, then proposes how its refined tech-infused lifestyle space can turn offline interest into digital interaction, CRM follow-up and repeat engagement.
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Project Objective</h3>
+            <p>
+              To diagnose how PCW’s Coffee-and-Learn concept is understood across public touchpoints and design a clearer customer journey from café discovery to micro-learning, lead capture, event participation and repeat engagement.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Scope</h3>
+            <p>
+              Remote brand audit, public UGC insight, layered positioning diagnosis, offline-to-digital journey design, content strategy, CRM thinking, GA4-style measurement and dashboard logic.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h3>Core Diagnosis</h3>
+          <p>
+            PCW does not lack brand assets. It already has a refined space, Tech Dose cards, tech-themed cup sleeves, AI-Q and community/event cues. The central challenge is connecting these offline experience cues into a clearer, measurable digital journey.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <div class="card soft">
+            <h4>Business Problem</h4>
+            <p>PCW’s Coffee-and-Learn concept is differentiated, but first-time users may not immediately understand how coffee, tech content, events and community are connected.</p>
+          </div>
+          <div class="card soft">
+            <h4>Marketing Goal</h4>
+            <p>Move users from a simple café/light-work entry point into Tech Dose interaction, AI-Q engagement, newsletter/event sign-up and repeat visits.</p>
+          </div>
+          <div class="card soft">
+            <h4>Data Approach</h4>
+            <p>Use public brand materials, Xiaohongshu/Instagram UGC, visible touchpoint analysis, simulated funnel data and GA4-style metrics to demonstrate insight-to-action thinking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brand">
+      <div class="container">
+        <h2>1. Brand & Touchpoint Audit</h2>
+        <p class="section-intro">
+          PCW should be understood as a Coffee-and-Learn Hub rather than simply a café or a course-selling channel. It uses coffee and wine as low-pressure lifestyle entry points to introduce bite-sized tech knowledge, experiential learning, events and community engagement.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Diagnosis</th>
+              <th>Marketing Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Brand Positioning</td>
+              <td>PCW is positioned as a Daily Coffee-and-Learn Hub: a hybrid lifestyle-learning space combining coffee, wine, tech knowledge, events and community.</td>
+              <td>Use layered positioning: café/light-work as the simple entry point, Coffee-and-Learn as the differentiation layer.</td>
+            </tr>
+            <tr>
+              <td>Core Asset</td>
+              <td>The core asset is not a single Tech Dose card or AI-Q Test, but a refined, low-pressure lifestyle space with a tech-infused learning atmosphere.</td>
+              <td>Tech Dose, cup sleeves, AI-Q and events should support the broader space experience rather than remain isolated features.</td>
+            </tr>
+            <tr>
+              <td>Supporting Systems</td>
+              <td>Tech Dose cards, tech-themed cup sleeves, AI-Q, events and partnership campaigns make the Coffee-and-Learn concept visible.</td>
+              <td>These systems need to become more interactive, trackable and connected to follow-up actions.</td>
+            </tr>
+            <tr>
+              <td>Main Challenge</td>
+              <td>Offline interest may not yet be clearly converted into digital interaction, lead capture, CRM follow-up and repeat engagement.</td>
+              <td>Build a clearer offline-to-digital journey through QR, AI-Q, newsletter, event sign-up and CRM.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="positioning">
+      <div class="container">
+        <h2>2. Positioning Diagnosis: Layered Positioning</h2>
+        <p class="section-intro">
+          PCW does not need to choose between being a work-friendly café and a tech-learning space. A more practical strategy is layered positioning: use the café, light-work and lifestyle setting as a low-barrier acquisition hook, while using Tech Dose cards, AI-Q, QR-based content and events to guide users toward the broader Coffee-and-Learn experience.
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <div class="mini-label">Simple Entry Point</div>
+            <h3>Café / Light Work / Lifestyle</h3>
+            <p>
+              First-time users need an easy way to understand the space. A café/light-work message lowers the entry barrier, but should avoid overpromising a quiet co-working environment.
+            </p>
+          </div>
+          <div class="card tech">
+            <div class="mini-label">Differentiation Layer</div>
+            <h3>Tech Dose / AI-Q / Coffee-and-Learn</h3>
+            <p>
+              Once users engage with the space, the brand needs to show that it is not just another café. Tech Dose, AI-Q and in-store learning cues make the difference visible.
+            </p>
+          </div>
+          <div class="card gold">
+            <div class="mini-label">Relationship Layer</div>
+            <h3>Events / CRM / Repeat Visits</h3>
+            <p>
+              The deeper opportunity is to convert curiosity into relationship: newsletter sign-up, salon participation, repeat visits and learning-related engagement.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote">
+          Recommended approach: simple entry, clear bridge, differentiated engagement.
+        </div>
+      </div>
+    </section>
+
+    <section id="ugc">
+      <div class="container">
+        <h2>3. Public UGC Insight</h2>
+        <p class="section-intro">
+          Public UGC suggests mixed customer perception. Some users recognise PCW’s tech-infused Coffee-and-Learn experience, while others approach it more simply as a work/study-friendly café. The latter can be a useful acquisition hook, but it also creates expectation risk if quiet seating, space availability, event booking or service flow does not match that use case.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>UGC Signal</th>
+              <th>What It Suggests</th>
+              <th>Marketing Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Positive UGC notices coffee + technology.</td>
+              <td>The Coffee-and-Learn concept can be understood when the tech layer is visible through cards, cups and in-store cues.</td>
+              <td>Amplify visible tech-learning moments through social content and UGC prompts.</td>
+            </tr>
+            <tr>
+              <td>Some users visit as a work/study café.</td>
+              <td>Xiaohongshu recommendations may shape expectations around quiet space, seating and work-friendliness.</td>
+              <td>Use “light work” carefully as an acquisition hook, while managing expectations around event use and space availability.</td>
+            </tr>
+            <tr>
+              <td>Tech Dose cards and cup sleeves are memorable.</td>
+              <td>Coffee itself can become a micro-content medium, not just a drink.</td>
+              <td>Turn static content cues into QR-based interactions and measurable digital touchpoints.</td>
+            </tr>
+            <tr>
+              <td>Negative experience can emerge when expectations mismatch.</td>
+              <td>If users expect a quiet co-working environment, event booking, noise or unclear service flow may cause disappointment.</td>
+              <td>Clarify use cases: coffee break, light work, Tech Dose, event, salon, not guaranteed quiet study space.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pain">
+      <div class="container">
+        <h2>4. Pain Point Diagnosis</h2>
+        <p class="section-intro">
+          The main issue is not that PCW lacks experience assets. The issue is that these assets need to be connected into a clearer offline-to-digital journey that captures interest, nurtures users and encourages repeat engagement.
+        </p>
+
+        <div class="grid four">
+          <div class="card tech">
+            <div class="mini-label">Main Pain Point</div>
+            <h3>Weak Offline-to-Digital Journey</h3>
+            <p>In-store interest may not be converted into measurable digital actions such as QR scans, AI-Q completion, newsletter sign-up or event registration.</p>
+          </div>
+          <div class="card">
+            <div class="mini-label">Supporting Issue</div>
+            <h3>Complex Value Hierarchy</h3>
+            <p>PCW combines coffee, wine, tech knowledge, AI-Q, events, courses and venue use, which may make the first-time user journey complex.</p>
+          </div>
+          <div class="card">
+            <div class="mini-label">Supporting Issue</div>
+            <h3>Shallow Tech Touchpoints</h3>
+            <p>Tech Dose and cup sleeves create memorability, but may remain passive if not connected to interaction or lead capture.</p>
+          </div>
+          <div class="card">
+            <div class="mini-label">Supporting Issue</div>
+            <h3>Mixed UGC Expectations</h3>
+            <p>Users may enter through a work/study café perception, which can create expectation risk if the actual experience differs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="container">
+        <h2>5. Core Strategy Framework: Coffee-and-Learn Journey</h2>
+        <p class="section-intro">
+          The core strategy is to turn PCW’s Coffee-and-Learn concept into a staged customer journey. Instead of treating Tech Dose cards, cup sleeves and AI-Q as isolated experience elements, the proposal connects them into a measurable path from discovery to repeat engagement.
+        </p>
+
+        <div class="journey">
+          <div class="journey-step">
+            <div class="journey-number">1</div>
+            <h4>Online Discovery</h4>
+            <p>Users discover PCW through Instagram, Xiaohongshu, Google or public UGC.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-number">2</div>
+            <h4>In-store Experience</h4>
+            <p>Users experience the refined space, coffee/wine setting and tech-learning atmosphere.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-number">3</div>
+            <h4>Micro-learning Touchpoint</h4>
+            <p>Users notice Tech Dose cards, cup sleeves or Today’s Tech Dose content.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-number">4</div>
+            <h4>Digital Interaction</h4>
+            <p>Users scan QR, take AI-Q, unlock a short insight or complete a playful quiz.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-number">5</div>
+            <h4>Lead Capture & CRM</h4>
+            <p>Users subscribe, leave email/WhatsApp, receive AI-Q results or event reminders.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-number">6</div>
+            <h4>Community & Repeat</h4>
+            <p>Users join salons, revisit the store, attend events or explore deeper learning.</p>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>User Mindset</th>
+              <th>Brand Task</th>
+              <th>CTA</th>
+              <th>Metric</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Online Discovery</td>
+              <td>“What is this place? Is it for me?”</td>
+              <td>Use an easy café/light-work entry message without reducing the brand to a normal study café.</td>
+              <td>View location / learn more</td>
+              <td>impressions, profile visits, website clicks</td>
+            </tr>
+            <tr>
+              <td>In-store Experience</td>
+              <td>“How is this different from a normal café?”</td>
+              <td>Make the tech-learning atmosphere visible through screens, QR prompts, cards and event cues.</td>
+              <td>Notice Tech Dose / scan QR</td>
+              <td>QR exposure, QR scan rate</td>
+            </tr>
+            <tr>
+              <td>Micro-learning Touchpoint</td>
+              <td>“This is interesting, but how is it relevant to me?”</td>
+              <td>Make Tech Dose more useful, playful and user-relevant.</td>
+              <td>Scan today’s insight</td>
+              <td>content views, scan-to-view rate</td>
+            </tr>
+            <tr>
+              <td>Digital Interaction</td>
+              <td>“I can try this quickly.”</td>
+              <td>Provide low-friction interaction such as AI-Q, persona quiz or scan-to-collect content.</td>
+              <td>Take AI-Q / unlock result</td>
+              <td>AI-Q start rate, completion rate</td>
+            </tr>
+            <tr>
+              <td>Lead Capture & CRM</td>
+              <td>“I will leave my contact if I get something useful.”</td>
+              <td>Offer value exchange: detailed result, free coffee, weekly Tech Dose or event reminder.</td>
+              <td>Subscribe / join event list</td>
+              <td>email capture rate, open rate, click rate</td>
+            </tr>
+            <tr>
+              <td>Community & Repeat</td>
+              <td>“I may come back or join something next time.”</td>
+              <td>Use salons, event recaps, member prompts and recommendations to encourage repeat engagement.</td>
+              <td>Join next salon / revisit</td>
+              <td>event sign-up, repeat visit, repeat participation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="container">
+        <h2>6. Experience Upgrade Strategy</h2>
+        <p class="section-intro">
+          The strategy should not simply add more “technology-looking” elements. Instead, it should make the tech-learning experience more visible, playful, interactive and connected to follow-up actions.
+        </p>
+
+        <div class="grid four">
+          <div class="card">
+            <h3>Clarify Entry Message</h3>
+            <p>Use easy but accurate acquisition hooks such as “a tech-inspired café for coffee, light work and ideas,” avoiding overpromises around quiet study.</p>
+            <div class="tag-row">
+              <span class="tag">Acquisition</span>
+              <span class="tag">Positioning</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Upgrade In-store Tech</h3>
+            <p>Use Today’s Tech Dose Wall, QR-based table prompts and clear event cues so users can understand the Coffee-and-Learn idea within 30 seconds.</p>
+            <div class="tag-row">
+              <span class="tag">O2O</span>
+              <span class="tag">Experience</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Make Learning Playful</h3>
+            <p>Turn Tech Dose into a collectible series and add a Coffee-and-Learn Persona Quiz to make micro-learning more shareable and repeatable.</p>
+            <div class="tag-row">
+              <span class="tag">Content</span>
+              <span class="tag">UGC</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Build CRM Loop</h3>
+            <p>Connect AI-Q results, newsletter, salon invitations, event recaps and repeat-visit incentives into a follow-up journey after the café visit.</p>
+            <div class="tag-row">
+              <span class="tag">CRM</span>
+              <span class="tag">Retention</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="container">
+        <h2>7. Audience Segmentation <span class="small">(Draft for Day 3)</span></h2>
+        <p class="section-intro">
+          This section will be refined in Day 3. The current draft separates users by intent rather than demographic labels.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th>Motivation</th>
+              <th>Pain Point</th>
+              <th>Entry Channel</th>
+              <th>Recommended Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Casual Coffee Visitors</td>
+              <td>Looking for a refined coffee/wine space or Central lifestyle spot.</td>
+              <td>May not care about tech learning yet.</td>
+              <td>Instagram, Xiaohongshu, Google Maps.</td>
+              <td>Use Tech Dose and QR prompts as light discovery.</td>
+            </tr>
+            <tr>
+              <td>Light-work Users</td>
+              <td>Want a stylish place for coffee, laptop work or short study.</td>
+              <td>May expect quiet seating and stable space availability.</td>
+              <td>Xiaohongshu, Google Search, UGC recommendations.</td>
+              <td>Clarify space use and guide them toward low-friction Tech Dose interaction.</td>
+            </tr>
+            <tr>
+              <td>Tech-curious Users</td>
+              <td>Interested in AI, productivity tools or future-facing ideas.</td>
+              <td>May not be ready for formal courses.</td>
+              <td>Tech Dose, AI-Q, social posts, event pages.</td>
+              <td>Offer AI-Q, persona quiz, newsletter or beginner-friendly salon.</td>
+            </tr>
+            <tr>
+              <td>Community & Event Users</td>
+              <td>Want to meet people and explore ideas through events.</td>
+              <td>Need to understand whether events are relevant and accessible.</td>
+              <td>Instagram, event pages, referrals.</td>
+              <td>Promote salons, event recaps and repeat participation prompts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="seo">
+      <div class="container">
+        <h2>8. SEO Keyword Mapping <span class="small">(Draft for Day 5)</span></h2>
+        <p class="section-intro">
+          SEO will be refined later. The current direction is to capture search demand around tech-inspired cafés, light work, AI learning and events without overpositioning PCW as a quiet study café.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Search Intent</th>
+              <th>Funnel Stage</th>
+              <th>Suggested Content / Page</th>
+              <th>CTA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>tech café Hong Kong</td>
+              <td>Find a technology-themed café experience.</td>
+              <td>Awareness</td>
+              <td>Coffee-and-Learn landing section.</td>
+              <td>Explore Today’s Tech Dose.</td>
+            </tr>
+            <tr>
+              <td>café for light work Central</td>
+              <td>Find a café suitable for short laptop work.</td>
+              <td>Awareness</td>
+              <td>Location / space use guide.</td>
+              <td>Check space and event schedule.</td>
+            </tr>
+            <tr>
+              <td>AI quiz Hong Kong</td>
+              <td>Try an AI-related self-assessment.</td>
+              <td>Interest</td>
+              <td>AI-Q landing page.</td>
+              <td>Take AI-Q.</td>
+            </tr>
+            <tr>
+              <td>tech event Hong Kong</td>
+              <td>Find local tech-sharing events.</td>
+              <td>Consideration</td>
+              <td>Upcoming salon / event page.</td>
+              <td>Join next event.</td>
+            </tr>
+            <tr>
+              <td>AI workshop Hong Kong</td>
+              <td>Find AI learning options.</td>
+              <td>Consideration</td>
+              <td>Beginner-friendly learning page.</td>
+              <td>Book a trial / talk to advisor.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="measurement">
+      <div class="container">
+        <h2>9. GA4-style Measurement Plan <span class="small">(Draft for Day 6)</span></h2>
+        <p class="section-intro">
+          Since internal analytics data is not available, this section proposes a measurement framework for the Coffee-and-Learn journey. The focus is on what should be tracked, why it matters and how the team could act on it.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Objective</th>
+              <th>Metric / Event</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Track online discovery</td>
+              <td>UTM source / medium, profile visits, website clicks</td>
+              <td>Understand which channels introduce users to PCW.</td>
+            </tr>
+            <tr>
+              <td>Measure in-store digital interaction</td>
+              <td>QR_scan, tech_dose_view, AIQ_start</td>
+              <td>See whether offline touchpoints drive measurable action.</td>
+            </tr>
+            <tr>
+              <td>Capture leads</td>
+              <td>newsletter_sign_up, AIQ_result_unlock, whatsapp_opt_in</td>
+              <td>Measure whether curiosity becomes a contactable lead.</td>
+            </tr>
+            <tr>
+              <td>Track event conversion</td>
+              <td>event_view, event_register, salon_signup</td>
+              <td>Measure movement from interest to community participation.</td>
+            </tr>
+            <tr>
+              <td>Measure retention</td>
+              <td>returning_users, repeat_event_signup, repeat_QR_scan</td>
+              <td>Track whether the Coffee-and-Learn journey encourages repeat engagement.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card" style="margin-top: 20px;">
+          <h4>Example UTM</h4>
+          <p class="small">utm_source=xiaohongshu&utm_medium=social&utm_campaign=coffee_and_learn&utm_content=tech_dose_collectible</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="container">
+        <h2>10. Dashboard Mockup <span class="small">(Draft for Day 6)</span></h2>
+        <p class="section-intro">
+          A simple dashboard structure is proposed to monitor the journey from discovery to QR interaction, lead capture and repeat engagement.
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <div class="metric">3,200</div>
+            <div class="metric-label">Website / Landing Page Sessions</div>
+          </div>
+          <div class="card">
+            <div class="metric">680</div>
+            <div class="metric-label">Tech Dose QR Scans</div>
+          </div>
+          <div class="card">
+            <div class="metric">310</div>
+            <div class="metric-label">AI-Q Starts</div>
+          </div>
+          <div class="card">
+            <div class="metric">198</div>
+            <div class="metric-label">AI-Q Completions</div>
+          </div>
+          <div class="card">
+            <div class="metric">126</div>
+            <div class="metric-label">Newsletter / WhatsApp Opt-ins</div>
+          </div>
+          <div class="card">
+            <div class="metric">42</div>
+            <div class="metric-label">Event / Salon Sign-ups</div>
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top: 20px;">
+          <div class="card">
+            <h4>Sample Insight</h4>
+            <p>Tech Dose QR scans may show whether the in-store micro-learning touchpoint is strong enough to move users from passive attention to active engagement.</p>
+          </div>
+          <div class="card">
+            <h4>Recommended Action</h4>
+            <p>If QR scans are high but event sign-ups are low, improve the intermediate offer, such as AI-Q results, weekly newsletter, or low-risk salon invitation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Core Skills Demonstrated</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>Digital Marketing Strategy</h3>
+            <p>Problem framing, positioning diagnosis, customer journey design and content-to-action planning.</p>
+            <div class="tag-row">
+              <span class="tag">Strategy</span>
+              <span class="tag">Journey Mapping</span>
+              <span class="tag">Audience Insight</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>UGC & Content Analytics</h3>
+            <p>Using public user-generated content to identify expectation gaps, customer perception and content opportunities.</p>
+            <div class="tag-row">
+              <span class="tag">Social Listening</span>
+              <span class="tag">UGC Insight</span>
+              <span class="tag">Content Strategy</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>CRM & Measurement Thinking</h3>
+            <p>Designing QR/AI-Q lead capture, CRM follow-up, GA4-style events, UTM logic and dashboard reporting.</p>
+            <div class="tag-row">
+              <span class="tag">CRM</span>
+              <span class="tag">GA4</span>
+              <span class="tag">Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2>Supporting Analytics Work</h2>
+        <p class="section-intro">
+          These selected academic and self-initiated projects support the skills demonstrated in the main case study. They show hands-on experience with social media data, audience analysis, text processing, visual reporting and analytical thinking.
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <h3>AI-assisted RED Headline Optimisation</h3>
+            <p>
+              Collected and cleaned RED/Xiaohongshu post data using Python, Selenium and Pandas. Analysed high-engagement headline patterns and built a simple GPT-3.5-assisted headline generation prototype.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">A/B Testing Thinking</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>YouTube Audience Sentiment & Topic Analysis</h3>
+            <p>
+              Processed public YouTube comments from international media platforms. Conducted text cleaning, word frequency analysis, sentiment polarity analysis and topic interpretation.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Text Analysis</span>
+              <span class="tag">Sentiment</span>
+              <span class="tag">Audience Insight</span>
+              <span class="tag">Visual Reporting</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Network & Statistical Analysis Archive</h3>
+            <p>
+              Applied R, Gephi and visualisation methods to explore structured datasets, network relationships and group-level patterns. This work supports my ability to clean data and translate analysis into visual reports.
+            </p>
+            <div class="tag-row">
+              <span class="tag">R</span>
+              <span class="tag">Gephi</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Visualisation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-intro">
+          I am seeking Digital Marketing Executive / Officer, Marketing Analyst and E-commerce Marketing Assistant opportunities in Hong Kong.
+        </p>
+
+        <div class="card">
+          <p><strong>Email:</strong> <a href="mailto:lirielzhang07@gmail.com">lirielzhang07@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/wenli-zhang-693ba2299" target="_blank">www.linkedin.com/in/wenli-zhang-693ba2299</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Wenli Zhang. Digital Marketing & Content Analytics Portfolio.</p>
+    </div>
+  </footer>
+</body>
+</html>
