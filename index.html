@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wenli Zhang | Digital Marketing & Content Analytics</title>
+  <style>
+    :root {
+      --text: #1f2933;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248, 250, 252, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    nav .name {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      letter-spacing: -0.05em;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: var(--card);
+    }
+
+    .button.primary {
+      color: white;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 12px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .span-6,
+      .span-4 {
+        grid-column: span 12;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="name">Wenli Zhang</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#featured">Featured Case</a>
+        <a href="#work">Supporting Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="preface-case.html">Preface Case →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="eyebrow">Digital Marketing & Content Analytics</div>
+      <h1>Turning content and audience data into clearer marketing decisions.</h1>
+      <p>
+        I use content analysis, audience data and basic reporting to understand how users discover,
+        engage with and respond to digital campaigns.
+      </p>
+      <p>
+        Featured work includes a public-data-based digital journey audit for Preface and analytics
+        projects on Xiaohongshu / RED content performance and YouTube audience sentiment.
+      </p>
+
+      <div class="button-row">
+        <a class="button primary" href="preface-case.html">View Featured Case</a>
+        <a class="button" href="#work">View Supporting Work</a>
+        <a class="button" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section id="featured">
+      <h2>Featured Case</h2>
+      <div class="grid">
+        <div class="card span-12">
+          <span class="tag">Portfolio Case Study</span>
+          <h3>Preface Coffee-and-Learn Digital Journey Audit</h3>
+          <p class="muted">
+            A public-data-based portfolio case study exploring how a lifestyle-learning space
+            can connect offline interest with digital interaction, lead capture and repeat engagement.
+          </p>
+          <ul>
+            <li>Mapped the journey from online discovery and in-store experience to AI-Q interaction and CRM follow-up.</li>
+            <li>Proposed a basic GA4-style measurement plan for source / medium, landing page, events and key actions.</li>
+            <li>Designed dashboard logic for channel performance, funnel tracking and CRM engagement.</li>
+          </ul>
+          <a class="project-link" href="preface-case.html">Open full case study →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Supporting Analytics Work</h2>
+      <div class="grid">
+        <div class="card span-4">
+          <span class="tag">Social Media Analytics</span>
+          <h3>Xiaohongshu / RED Content Performance Analysis</h3>
+          <p class="muted">
+            Analysed headline patterns, likes, favourites and engagement signals from social media post data.
+          </p>
+          <ul>
+            <li>Tools: Python, Selenium, Pandas</li>
+            <li>Focus: content performance, headline patterns, engagement insight</li>
+            <li>Output: AI-assisted headline generation prototype and A/B testing thinking</li>
+          </ul>
+        </div>
+
+        <div class="card span-4">
+          <span class="tag">Audience Insight</span>
+          <h3>YouTube Audience Sentiment Analysis</h3>
+          <p class="muted">
+            Processed public YouTube comments to understand audience response patterns and sentiment.
+          </p>
+          <ul>
+            <li>Tools: Python, text cleaning, visual reporting</li>
+            <li>Focus: sentiment polarity, word frequency, topic patterns</li>
+            <li>Output: visual insight report</li>
+          </ul>
+        </div>
+
+        <div class="card span-4">
+          <span class="tag">Data Visualisation</span>
+          <h3>Network & Statistical Analysis Archive</h3>
+          <p class="muted">
+            Academic and course-based projects involving structured data, network analysis and visual reporting.
+          </p>
+          <ul>
+            <li>Tools: R, Gephi, Excel</li>
+            <li>Focus: descriptive analysis, visualisation, social network patterns</li>
+            <li>Output: research-based reports and charts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card span-6">
+          <h3>Marketing</h3>
+          <div class="skills">
+            <span class="skill">Campaign support</span>
+            <span class="skill">Content optimisation</span>
+            <span class="skill">Social media analytics</span>
+            <span class="skill">Audience insight</span>
+            <span class="skill">Market research</span>
+            <span class="skill">Competitor analysis</span>
+          </div>
+        </div>
+
+        <div class="card span-6">
+          <h3>Analytics & Tools</h3>
+          <div class="skills">
+            <span class="skill">Excel / Google Sheets</span>
+            <span class="skill">Python</span>
+            <span class="skill">R</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">Data cleaning</span>
+            <span class="skill">Sentiment analysis</span>
+            <span class="skill">Basic GA4</span>
+            <span class="skill">Basic SEO</span>
+            <span class="skill">Basic SQL</span>
+            <span class="skill">PowerPoint</span>
+            <span class="skill">Canva</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>Email:</strong> lirielzhang07@gmail.com</p>
+        <p><strong>Phone:</strong> +852 67653651</p>
+        <p><strong>Location / Work eligibility:</strong> Hong Kong, IANG</p>
+        <p class="muted">
+          Open to entry-level roles in digital marketing, content marketing, campaign support
+          and junior marketing analytics.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Wenli Zhang · Digital Marketing & Content Analytics Portfolio
+  </footer>
+</body>
+</html>
