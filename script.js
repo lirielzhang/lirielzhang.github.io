@@ -1,3 +1,13 @@
 document.getElementById('year').textContent = new Date().getFullYear();
-const observer = new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('is-visible')}})}, {threshold:0.08});
-document.querySelectorAll('.reveal').forEach((el)=>observer.observe(el));
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-links');
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+}

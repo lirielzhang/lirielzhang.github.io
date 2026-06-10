@@ -4,393 +4,341 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wenli Zhang | Digital Marketing Portfolio</title>
-  <meta name="description" content="Digital marketing and social content portfolio by Wenli Zhang. Social content audit, consumer insight, headline analysis and campaign visual kit." />
-  <meta name="theme-color" content="#14352c" />
+  <meta name="description" content="Digital marketing and social content portfolio by Wenli Zhang. Two project cases: Xiaohongshu headline analysis and Slowood social content strategy." />
+  <meta name="theme-color" content="#0f1f2e" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#home">Wenli Zhang</a>
-    <nav class="nav-links" aria-label="Main navigation">
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="Wenli Zhang portfolio home">
+      <span>Wenli Zhang</span>
+      <small>Digital Marketing Portfolio</small>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="#projects">Projects</a>
-      <a href="#slowood">Slowood</a>
-      <a href="#xiaohongshu">Xiaohongshu</a>
+      <a href="#case-xhs">Xiaohongshu</a>
+      <a href="#case-slowood">Slowood</a>
       <a href="#visual-kit">Visual Kit</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="hero section-pad">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="kicker">Digital Marketing & Social Content Portfolio</p>
-          <h1>Turning social signals into content strategy.</h1>
-          <p class="hero-lede">I use public social data, consumer language and content patterns to build practical campaign touchpoints for junior digital marketing and social content roles.</p>
-          <div class="chip-row">
-            <span>Content research</span>
-            <span>Social media planning</span>
-            <span>Campaign support</span>
-            <span>KPI thinking</span>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-dark" href="#projects">View projects</a>
-            <a class="btn btn-line" href="assets/Wenli_Zhang_CV.pdf" download>Download CV</a>
-          </div>
+  <main id="home">
+    <section class="hero scene">
+      <div class="hero-copy">
+        <p class="kicker">Portfolio for junior Hong Kong marketing roles</p>
+        <h1>Digital marketing, social content, and data-informed content planning.</h1>
+        <p class="lead">I am a marketing graduate with analytics and content planning experience, looking for a junior role in <strong>digital marketing</strong>, <strong>social media</strong>, or <strong>campaign support</strong>.</p>
+        <div class="hero-actions">
+          <a class="btn dark" href="#projects">View projects</a>
+          <a class="btn ghost" href="assets/Wenli_Zhang_CV.pdf" download>Download CV</a>
         </div>
-        <div class="hero-board reveal">
-          <div class="board-top">
-            <span>Portfolio Map</span>
-            <strong>2 focused cases</strong>
-          </div>
-          <a class="index-card primary-card" href="#slowood">
-            <small>Main case</small>
-            <h2>Slowood Social Content Audit</h2>
-            <p>Public data → content gap → campaign touchpoints</p>
-          </a>
-          <a class="index-card coral-card" href="#xiaohongshu">
-            <small>Supporting case</small>
-            <h2>Xiaohongshu Headline Analysis</h2>
-            <p>Engagement signals → headline rules → prototype logic</p>
-          </a>
-          <div class="role-strip">
-            <span>Target roles</span>
-            <p>Social Media Assistant · Content Marketing Assistant · Digital Marketing Assistant</p>
-          </div>
+      </div>
+      <aside class="hero-board" aria-label="Portfolio focus summary">
+        <div class="board-label">How to read this portfolio</div>
+        <div class="route-line">
+          <article>
+            <span>01</span>
+            <h2>Analyse content data</h2>
+            <p>Xiaohongshu headlines, engagement signals, content rules.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>Decode user language</h2>
+            <p>What users search, save, question, avoid and share.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>Turn insight into action</h2>
+            <p>Content tasks, campaign touchpoints and KPI framework.</p>
+          </article>
         </div>
+      </aside>
+    </section>
+
+    <section class="mini-about scene">
+      <div>
+        <p class="kicker">About Me</p>
+        <h2>Not a CV repeat — a work sample.</h2>
+      </div>
+      <p>I studied Communication and New Media at City University of Hong Kong after an Advertising background. My portfolio focuses on two project cases that show how I move from messy social content signals to clear content planning and execution ideas.</p>
+      <div class="capability-strip">
+        <span>Content research</span>
+        <span>Social media planning</span>
+        <span>Campaign support</span>
+        <span>Basic reporting</span>
       </div>
     </section>
 
-    <section class="mini-about section-pad-sm">
-      <div class="container about-strip reveal">
+    <section id="projects" class="projects scene">
+      <div class="section-intro">
+        <p class="kicker">Selected projects</p>
+        <h2>Two cases, one story: from content data to brand action.</h2>
+      </div>
+      <div class="project-duo">
+        <a class="project-tile main" href="#case-xhs">
+          <div class="tile-num">Case 01</div>
+          <h3>Xiaohongshu Headline Performance Analysis</h3>
+          <p>Data-driven content analysis case. Shows how high-engagement posts can become reusable headline rules and prototype logic.</p>
+          <div class="mini-tags"><span>Academic project</span><span>Content analytics</span><span>Headline framework</span></div>
+        </a>
+        <a class="project-tile secondary" href="#case-slowood">
+          <div class="tile-num">Case 02</div>
+          <h3>Slowood Social Content Audit & Strategy</h3>
+          <p>Content strategy case. Uses public social signals to turn weak interaction into practical campaign touchpoints.</p>
+          <div class="mini-tags"><span>Self-initiated</span><span>Social audit</span><span>Campaign planning</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="case-xhs" class="case case-xhs">
+      <div class="case-hero scene compact">
         <div>
-          <p class="kicker">About</p>
-          <h2>Not a CV repeat.</h2>
+          <p class="kicker">Case 01 · Data-driven content analysis</p>
+          <h2>Xiaohongshu Headline Performance Analysis</h2>
+          <p class="lead">This academic project started with a practical question: can high-engagement Xiaohongshu headlines be turned into a reusable rule for content creators?</p>
         </div>
-        <p>I am a Communication and New Media graduate with an Advertising background. This portfolio focuses on how I approach marketing work: decode user signals, shape content ideas, build campaign materials and define basic measurement.</p>
-        <div class="mini-skills">
-          <span>Audience insight</span>
-          <span>Content briefs</span>
-          <span>Social audit</span>
-          <span>Visual support</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section-pad projects-section">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="kicker">Selected Projects</p>
-          <h2>Two cases, one story.</h2>
-          <p>The portfolio is built around two projects: one brand-level social content strategy case and one content-level headline analysis case.</p>
-        </div>
-        <div class="project-grid">
-          <a class="project-tile large reveal" href="#slowood">
-            <div class="tile-number">01</div>
-            <span>Self-initiated portfolio case</span>
-            <h3>Slowood Social Content Audit & Strategy</h3>
-            <p>A public-data-based case identifying a content translation gap and turning it into campaign touchpoints.</p>
-            <div class="tile-tags"><em>Social audit</em><em>Consumer language</em><em>Content strategy</em><em>KPI framework</em></div>
-          </a>
-          <a class="project-tile reveal" href="#xiaohongshu">
-            <div class="tile-number">02</div>
-            <span>Academic project</span>
-            <h3>Xiaohongshu Headline Performance Analysis</h3>
-            <p>High-engagement posts decoded into headline quality rules and prototype logic.</p>
-            <div class="tile-tags"><em>Content analytics</em><em>Headline hooks</em><em>Prototype logic</em></div>
-          </a>
+        <div class="case-facts">
+          <p><strong>Role</strong><br>Data collection, cleaning, sample selection, headline pattern analysis</p>
+          <p><strong>Output</strong><br>Headline quality framework + AI-assisted prototype logic</p>
+          <p><strong>Marketing value</strong><br>Turn content examples into practical writing rules</p>
         </div>
       </div>
-    </section>
 
-    <section id="slowood" class="case-shell section-pad">
-      <div class="container">
-        <div class="case-hero slowood-hero reveal">
-          <div>
-            <p class="kicker">Project 01 · Main case</p>
-            <h2>Slowood Social Content Audit & Strategy</h2>
-            <p>A self-initiated portfolio case using public social signals to design content strategy and campaign touchpoints. Not an official Slowood project.</p>
+      <div class="xhs-grid scene">
+        <div class="visual-card data-card">
+          <p class="kicker">Data lens</p>
+          <h3>From posts to patterns</h3>
+          <div class="pipeline">
+            <span>Collect</span><span>Clean</span><span>Rank</span><span>Select</span><span>Build prompt</span>
           </div>
-          <div class="case-facts">
-            <div><span>Focus</span><strong>Social content strategy</strong></div>
-            <div><span>Data</span><strong>IG · XHS · Reviews · Benchmarks</strong></div>
-            <div><span>Output</span><strong>Content tasks · Brief · Visual kit · KPIs</strong></div>
-          </div>
+          <p class="note">Technical work was kept simple in the portfolio: the value is not the crawler itself, but how engagement signals and headline features become content rules.</p>
         </div>
-
-        <div class="big-question reveal">
-          <span>Research question</span>
-          <h3>How can Slowood turn existing consumer interest into more save-worthy, participatory and repeatable social content?</h3>
-          <div class="question-mini">
-            <div><strong>Save-worthy</strong><p>Users keep it for decisions.</p></div>
-            <div><strong>Participatory</strong><p>Users can answer or repost.</p></div>
-            <div><strong>Repeatable</strong><p>Users have a reason to return.</p></div>
-          </div>
-        </div>
-
-        <div class="evidence-wall reveal">
-          <div class="wall-title">
-            <p class="kicker">Research board</p>
-            <h3>What I looked at</h3>
-          </div>
-          <div class="source-card"><b>Instagram posts</b><span>Format · likes · comments · hooks</span><p>Brand voice and visible participation signals.</p></div>
-          <div class="source-card"><b>Story Highlights</b><span>Locations · Slo-news · Snacking · Pop Ups · Refill</span><p>Existing information structure.</p></div>
-          <div class="source-card coral"><b>Xiaohongshu notes</b><span>Titles · visible likes/saves · barriers</span><p>Consumer search and decision language.</p></div>
-          <div class="source-card"><b>Reviews & articles</b><span>Store experience · price/value · product mentions</span><p>Visit and purchase triggers.</p></div>
-          <div class="source-card"><b>Benchmarks</b><span>Live Zero · The Bulkshoppers · Green Common</span><p>Practical sustainability content mechanics.</p></div>
-        </div>
-
-        <div class="method-panel reveal">
-          <div>
-            <p class="kicker">Method</p>
-            <h3>From messy posts to marketing signals</h3>
-          </div>
-          <div class="signal-flow">
-            <span>Raw posts</span>
-            <span>Motivation</span>
-            <span>Barrier</span>
-            <span>Hook</span>
-            <span>Content task</span>
-          </div>
-          <div class="coding-grid">
-            <div><b>Motivation</b><p>gift · scent · route · refill · discovery</p></div>
-            <div><b>Decision stage</b><p>awareness · consideration · purchase · repeat</p></div>
-            <div><b>Barrier</b><p>price · scent mismatch · overhype · refill friction</p></div>
-            <div><b>Shareable hook</b><p>checklist · guide · warning · routine · route</p></div>
-          </div>
-        </div>
-
-        <div class="findings-section reveal">
-          <div class="section-heading compact">
-            <p class="kicker">Key findings</p>
-            <h3>Data did not become copied titles. It became content tasks.</h3>
-          </div>
-          <div class="findings-grid">
-            <article>
-              <span>01</span>
-              <h4>Audience exists, but participation is weak.</h4>
-              <div class="mini-metrics"><em>36K followers</em><em>1,030 posts</em><em>15 IG posts reviewed</em><em>Near-zero comments</em></div>
-              <p>So what: the opportunity is not only awareness, but participation conversion.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h4>Brand voice is educational and value-led.</h4>
-              <div class="mini-metrics"><em>sustainability</em><em>refill</em><em>eco education</em><em>store updates</em></div>
-              <p>So what: values are clear, but many posts need stronger response moments.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h4>Consumer voice is decision-oriented.</h4>
-              <div class="mini-metrics"><em>must-buy</em><em>fragrance</em><em>souvenir</em><em>Central / airport</em></div>
-              <p>So what: consumers approach Slowood through purchase, scent, route and gifting decisions.</p>
-            </article>
-            <article>
-              <span>04</span>
-              <h4>Shareable assets exist, but the UGC loop is unclear.</h4>
-              <div class="mini-metrics"><em>aesthetic stores</em><em>refill service</em><em>scent products</em><em>few UGC prompts</em></div>
-              <p>So what: the brand needs a clearer mechanism that turns store experience into participation.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="diagnosis-board reveal">
-          <p class="kicker">Diagnosis</p>
-          <h3>A content translation gap</h3>
-          <div class="voice-board">
-            <div class="voice-block brand-voice">
-              <span>Brand Voice</span>
-              <b>Sustainable living · Refill culture · Eco choices · Education carousel · Store updates</b>
-            </div>
-            <div class="gap-block">
-              <span>Translation Gap</span>
-              <p>Low visible interaction is not only an engagement issue. It reflects a gap between brand values and consumer decision language.</p>
-            </div>
-            <div class="voice-block consumer-voice">
-              <span>Consumer Voice</span>
-              <b>What to buy · What smells good · Where to visit · What makes a good gift · What is worth it</b>
-            </div>
-          </div>
-        </div>
-
-        <div class="strategy-section reveal">
-          <div class="strategy-title">
-            <p class="kicker">Strategy</p>
-            <h3>Start Small with Slowood</h3>
-            <p>Translate sustainability into low-barrier actions: choose one product, test one scent, save one visit moment, and begin one refill step.</p>
-          </div>
-          <div class="task-cards">
-            <article><small>01</small><h4>First Slowood Basket</h4><p><b>Signal</b> must-buy / souvenir / shopping guide</p><p><b>Task</b> reduce first-time choice friction</p></article>
-            <article><small>02</small><h4>Slowood Scent Finder</h4><p><b>Signal</b> fragrance interest + scent mismatch</p><p><b>Task</b> reduce sensory uncertainty</p></article>
-            <article><small>03</small><h4>Slowood Stop-by Moments</h4><p><b>Signal</b> Central / airport / route mentions</p><p><b>Task</b> turn location into occasion</p></article>
-            <article><small>04</small><h4>One Small Swap</h4><p><b>Signal</b> education-heavy IG + refill assets</p><p><b>Task</b> convert sustainability into micro-action</p></article>
-          </div>
-        </div>
-
-        <div class="sprint-section reveal">
-          <div class="section-heading compact">
-            <p class="kicker">Execution</p>
-            <h3>4-week data-backed content sprint</h3>
-          </div>
-          <div class="sprint-board">
-            <article><span>Week 1</span><h4>Reduce choice friction</h4><p>First Slowood Basket carousel</p><b>Saves · shares · product questions</b></article>
-            <article><span>Week 2</span><h4>Reduce scent uncertainty</h4><p>Scent Finder poll + guide</p><b>Poll replies · saves · scent questions</b></article>
-            <article><span>Week 3</span><h4>Turn location into occasion</h4><p>Stop-by Moments reel / map card</p><b>Route saves · profile visits · QR scans</b></article>
-            <article><span>Week 4</span><h4>Convert education into micro-action</h4><p>One Small Swap story template</p><b>Tags · story mentions · refill scans</b></article>
-          </div>
-          <div class="brief-board">
-            <div>
-              <p class="kicker">Sample brief</p>
-              <h4>Slowood Scent Finder</h4>
-              <p>For scent-led shoppers and gift shoppers who are interested in scent products but unsure which one fits.</p>
-            </div>
-            <div class="brief-points">
-              <span><b>Data signal</b> fragrance, incense, repeat purchase and scent discomfort</span>
-              <span><b>Format</b> IG carousel + Story poll + in-store prompt</span>
-              <span><b>Hook</b> Not sure which Slowood scent to start with?</span>
-              <span><b>KPI</b> saves, poll replies, scent questions, QR scans</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="loop-measure reveal">
-          <div class="loop-card">
-            <p class="kicker">Participation loop</p>
-            <h3>From content to light CRM touchpoint</h3>
-            <div class="loop-line"><span>See</span><span>Save</span><span>Visit</span><span>Scan</span><span>Share</span><span>Reward</span><span>Return</span></div>
-          </div>
-          <div class="kpi-card">
-            <p class="kicker">Measurement</p>
-            <h3>Different tasks, different KPIs</h3>
-            <div class="kpi-grid">
-              <span>Save-worthy content<br><b>Saves · shares</b></span>
-              <span>Response<br><b>Comments · polls</b></span>
-              <span>Visit intent<br><b>Map clicks · QR scans</b></span>
-              <span>UGC<br><b>Tags · story mentions</b></span>
-              <span>Repeat<br><b>Opt-ins · returning code use</b></span>
-            </div>
-            <p class="note">Proposed framework only. No real campaign results are claimed.</p>
-          </div>
+        <div class="phone-mock" aria-label="Mock Xiaohongshu post card">
+          <div class="phone-top"></div>
+          <div class="cover-block"></div>
+          <h4>香港本地人也爱的茶餐厅，猪排多士外脆里嫩！</h4>
+          <div class="social-row"><span>Likes</span><span>Saves</span><span>Comments</span></div>
         </div>
       </div>
-    </section>
 
-    <section id="xiaohongshu" class="case-shell xhs-shell section-pad">
-      <div class="container">
-        <div class="case-hero xhs-hero reveal">
-          <div>
-            <p class="kicker">Project 02 · Supporting case</p>
-            <h2>Xiaohongshu Headline Performance Analysis</h2>
-            <p>Academic project exploring how high-engagement posts can inform headline optimisation and content brief logic.</p>
-          </div>
-          <div class="case-facts">
-            <div><span>Role</span><strong>Data collection · cleaning · headline analysis</strong></div>
-            <div><span>Tools</span><strong>Python · Selenium · Pandas · Requests</strong></div>
-            <div><span>Output</span><strong>Headline framework · prototype logic</strong></div>
-          </div>
-        </div>
-
-        <div class="xhs-layout reveal">
-          <div class="xhs-main-card">
-            <p class="kicker">Content-level analysis</p>
-            <h3>From high-engagement posts to reusable headline rules.</h3>
-            <p>Xiaohongshu is a UGC-driven platform where headlines strongly affect whether users click, save or interact. This project selected high-performing public posts and translated them into headline generation logic.</p>
-          </div>
-          <div class="mock-xhs-card">
-            <span>Mock post card</span>
-            <div class="mock-image"></div>
-            <h4>香港本地人也爱的茶餐厅，猪排多士外脆里嫩！</h4>
-            <p>Likes · saves · comments as engagement signals</p>
-          </div>
-        </div>
-
-        <div class="process-board reveal">
-          <p class="kicker">Data process</p>
-          <div class="process-line"><span>Collect</span><span>Clean</span><span>Rank</span><span>Select</span><span>Build Prompt</span></div>
-          <div class="process-notes">
-            <p><b>Collect</b> public post data with Python, Selenium and Requests.</p>
-            <p><b>Clean</b> duplicates, emojis, garbled text and irrelevant fields with Pandas.</p>
-            <p><b>Rank</b> posts by likes and favourites as engagement signals.</p>
-            <p><b>Select</b> high-quality examples for prompt design.</p>
-          </div>
-        </div>
-
-        <div class="criteria-board reveal">
-          <div>
-            <p class="kicker">Selection logic</p>
-            <h3>Not only high numbers.</h3>
-            <p>I also considered whether each example could teach the prototype a useful headline pattern.</p>
-          </div>
-          <div class="criteria-list">
-            <span>High likes & favourites</span>
-            <span>Attractive headline</span>
-            <span>Title-content diversity</span>
-            <span>Long enough content</span>
-            <span>HK food / travel tips</span>
-            <span>Topic hashtags removed</span>
-          </div>
-        </div>
-
-        <div class="headline-framework reveal">
-          <p class="kicker">Headline framework</p>
-          <h3>Useful headline = clear benefit + specific context + matched content</h3>
-          <div class="framework-cards">
-            <article><b>Benefit</b><p>Users quickly know what they can eat, buy, visit, save, avoid or learn.</p></article>
-            <article><b>Specificity</b><p>Location, price, identity and scenario make a post easier to judge.</p></article>
-            <article><b>Content fit</b><p>A good headline attracts attention without misleading the reader.</p></article>
-          </div>
-        </div>
-
-        <div class="prototype-board reveal">
-          <div>
-            <p class="kicker">Prototype logic</p>
-            <h3>Input content → headline options</h3>
-            <p>Since the original demo is no longer active, this section shows prototype logic and selected output examples instead of claiming a live tool.</p>
-          </div>
-          <div class="input-output-board">
-            <div><b>Input</b><p>今天中午特意带小伙伴们来打卡一家我爱吃的茶餐厅。这家【炳记茶档】真的是香港排队王……我推荐的第一名就是【猪排多士】。</p></div>
-            <div><b>Generated-style outputs</b><ol><li>来香港一定要吃的茶餐厅！炳记猪排多士真的香</li><li>香港排队王茶档打卡｜猪排多士值得专门来吃吗？</li><li>第一次来香港别错过这家茶餐厅，猪排多士太上头</li></ol></div>
-          </div>
+      <div class="framework scene">
+        <p class="kicker">Headline framework</p>
+        <h3>Useful headline = clear benefit + specific context + matched content</h3>
+        <div class="rule-grid">
+          <article><strong>Benefit</strong><p>Users quickly know what they can eat, buy, visit, save, avoid or learn.</p></article>
+          <article><strong>Specific context</strong><p>Location, price, identity and scenario make a post easier to judge.</p></article>
+          <article><strong>Matched content</strong><p>A strong hook should attract attention without misleading the reader.</p></article>
         </div>
       </div>
-    </section>
 
-    <section id="visual-kit" class="visual-kit section-pad">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="kicker">Visual Kit</p>
-          <h2>Start Small with Slowood</h2>
-          <p>Concept mockups showing how the Slowood strategy can become social and in-store touchpoints.</p>
+      <div class="prototype scene">
+        <div class="input-panel">
+          <span>Input content</span>
+          <p>今天中午特意带小伙伴们来打卡一家我爱吃的茶餐厅。这家【炳记茶档】真的是香港排队王，好多艺人同行也很爱来打卡。我推荐的第一名就是【猪排多士】，外面脆脆的，里面的肉嫩嫩的有嚼劲。如果你们来香港一定要来试试。</p>
         </div>
-        <div class="mockup-gallery reveal">
-          <article class="mockup dark"><small>Feed post</small><h3>Start Small with Slowood</h3><p>One product to try. One scent to test. One refill step to begin.</p><b>Save your first step.</b></article>
-          <article class="mockup coral"><small>XHS cover</small><h3>First Slowood Basket</h3><p>Gift · Scent · Refill starters</p><b>Save before your next visit.</b></article>
-          <article class="mockup light"><small>IG story poll</small><h3>Which scent mood are you?</h3><div class="polls"><span>Clean</span><span>Woody</span><span>Herbal</span><span>Warm</span></div></article>
-          <article class="mockup sage"><small>In-store prompt</small><h3>One small swap today?</h3><p>Snap your refill or reuse moment.</p><b>Tag us to be reposted.</b></article>
-          <article class="mockup black"><small>Reward card</small><h3>Bring a friend next time</h3><p>A small reward for your next refill moment.</p><b>STARTSMALL10</b></article>
+        <div class="output-panel">
+          <span>Generated-style headline options</span>
+          <ol>
+            <li>来香港一定要吃的茶餐厅！炳记猪排多士真的香</li>
+            <li>香港排队王茶档打卡｜猪排多士值得专门来吃吗？</li>
+            <li>第一次来香港别错过这家茶餐厅，猪排多士太上头</li>
+            <li>香港本地人也爱的茶餐厅，猪排多士外脆里嫩！</li>
+          </ol>
+          <p class="fineprint">Sample output based on original academic prototype logic. No live API connection is claimed.</p>
         </div>
       </div>
-    </section>
 
-    <section id="contact" class="contact section-pad-sm">
-      <div class="container contact-panel reveal">
+      <div class="validation scene">
         <div>
-          <p class="kicker">Contact</p>
-          <h2>Contact Me</h2>
+          <p class="kicker">How I would validate it</p>
+          <h3>A/B test plan, not fake results.</h3>
         </div>
-        <div class="contact-links">
-          <a href="mailto:lirielzhang07@gmail.com">lirielzhang07@gmail.com</a>
-          <a href="https://linkedin.com/in/wenli-zhang-693ba2299">LinkedIn</a>
-          <a href="assets/Wenli_Zhang_CV.pdf" download>Download CV</a>
-          <span>IANG visa · valid until 5 Feb 2027</span>
+        <div class="validation-grid">
+          <article><strong>Test</strong><p>Compare benefit-led vs curiosity-led headline options.</p></article>
+          <article><strong>Metrics</strong><p>Click-through, saves, comments, and title-content fit feedback.</p></article>
+          <article><strong>Decision</strong><p>Keep headline rules that improve action without misleading readers.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section id="case-slowood" class="case case-slowood">
+      <div class="case-hero scene compact dark-panel">
+        <div>
+          <p class="kicker">Case 02 · Social content strategy</p>
+          <h2>Slowood Social Content Audit & Strategy</h2>
+          <p class="lead">A self-initiated portfolio case based on public social signals. The goal is not to invent a campaign from nowhere, but to show how data can shape content tasks and campaign touchpoints.</p>
+        </div>
+        <div class="stat-stack">
+          <span><strong>36K</strong> IG followers</span>
+          <span><strong>1,030</strong> IG posts</span>
+          <span><strong>15</strong> IG posts reviewed</span>
+          <span><strong>15</strong> XHS notes coded</span>
+        </div>
+      </div>
+
+      <div class="research-summary scene">
+        <div class="section-intro small">
+          <p class="kicker">What I found</p>
+          <h3>Research summary</h3>
+        </div>
+        <div class="summary-table">
+          <div><b>Instagram</b><p>Content is mainly educational; visible comments in the sample are mostly near zero.</p></div>
+          <div><b>Xiaohongshu</b><p>Users search through must-buy, scent, souvenir, Central / airport and worth-it language.</p></div>
+          <div><b>Reviews & articles</b><p>Store experience, price/value, refill friction and product choice are repeated decision points.</p></div>
+          <div><b>Benchmarks</b><p>Sustainable content works better when it becomes practical, routine-based and easy to imitate.</p></div>
+        </div>
+      </div>
+
+      <div class="charts scene">
+        <div class="chart-card">
+          <p class="kicker">Slowood IG sample</p>
+          <h3>Content mix leans educational</h3>
+          <div class="bar-chart">
+            <div style="--w:90%"><span>Education</span><b>9</b></div>
+            <div style="--w:40%"><span>Lifestyle</span><b>4</b></div>
+            <div style="--w:20%"><span>Promo</span><b>2</b></div>
+          </div>
+          <p class="fineprint">Based on the 15 usable recent-post sample in the research pack.</p>
+        </div>
+        <div class="chart-card accent">
+          <p class="kicker">XHS note coding</p>
+          <h3>Consumer language is decision-oriented</h3>
+          <div class="bar-chart coral-bars">
+            <div style="--w:100%"><span>Must-buy / product discovery</span><b>6</b></div>
+            <div style="--w:67%"><span>Barrier / negative review</span><b>4</b></div>
+            <div style="--w:50%"><span>Store visit / route guide</span><b>3</b></div>
+            <div style="--w:83%"><span>Scent / incense mentions</span><b>5</b></div>
+            <div style="--w:17%"><span>Airport shopping</span><b>1</b></div>
+          </div>
+          <p class="fineprint">15 Xiaohongshu notes were coded by motivation, barrier and recurring themes. Theme counts can overlap.</p>
+        </div>
+      </div>
+
+      <div class="example-coding scene">
+        <p class="kicker">From raw content to content task</p>
+        <h3>Data was not copied as titles. It was decoded into user needs.</h3>
+        <div class="coding-examples">
+          <article>
+            <span>Raw user language</span>
+            <p>“Slowood 必买 / 伴手礼 / 购物攻略”</p>
+            <b>Meaning</b>
+            <p>Users want help choosing what to buy first.</p>
+            <strong>Content task: First Slowood Basket</strong>
+          </article>
+          <article>
+            <span>Raw user language</span>
+            <p>“香氛无限回购 / 没心理准备不要买这个香”</p>
+            <b>Meaning</b>
+            <p>Scent drives interest, but also mismatch risk.</p>
+            <strong>Content task: Slowood Scent Finder</strong>
+          </article>
+          <article>
+            <span>Raw user language</span>
+            <p>“中环 / 机场 / 离港前必逛”</p>
+            <b>Meaning</b>
+            <p>Slowood appears in route-based shopping moments.</p>
+            <strong>Content task: Slowood Stop-by Moments</strong>
+          </article>
+        </div>
+      </div>
+
+      <div class="diagnosis scene">
+        <p class="kicker">Core diagnosis</p>
+        <h3>Brand vs. consumer language mismatch</h3>
+        <div class="split-board">
+          <div>
+            <span>Brand says</span>
+            <ul><li>Sustainable living</li><li>Refill culture</li><li>Eco education</li><li>Store updates</li></ul>
+          </div>
+          <div class="middle-gap">Mismatch</div>
+          <div>
+            <span>Consumers ask</span>
+            <ul><li>What should I buy?</li><li>What smells good?</li><li>Is it worth it?</li><li>When should I visit?</li></ul>
+          </div>
+        </div>
+        <p class="bigline">The opportunity is to translate Slowood’s sustainable lifestyle positioning into content that is easier to save, answer, share and repeat.</p>
+      </div>
+
+      <div class="strategy scene">
+        <div class="section-intro small">
+          <p class="kicker">Strategy</p>
+          <h3>Start Small with Slowood</h3>
+          <p>Translate sustainability into low-barrier actions: choose one product, test one scent, save one visit moment, and begin one refill step.</p>
+        </div>
+        <div class="task-board">
+          <article><span>01</span><h4>First Slowood Basket</h4><p>Reduce first-time choice friction.</p></article>
+          <article><span>02</span><h4>Slowood Scent Finder</h4><p>Reduce sensory uncertainty.</p></article>
+          <article><span>03</span><h4>Slowood Stop-by Moments</h4><p>Turn location into occasion.</p></article>
+          <article><span>04</span><h4>One Small Swap</h4><p>Convert education into micro-action.</p></article>
+        </div>
+      </div>
+
+      <div class="sprint scene">
+        <p class="kicker">Execution</p>
+        <h3>4-week content sprint</h3>
+        <div class="sprint-row">
+          <article><b>Week 1</b><span>First Slowood Basket</span><p>Saves · Shares · Product questions</p></article>
+          <article><b>Week 2</b><span>Scent Finder</span><p>Poll replies · Saves · Scent questions</p></article>
+          <article><b>Week 3</b><span>Stop-by Moments</span><p>Profile visits · Route saves · QR scans</p></article>
+          <article><b>Week 4</b><span>One Small Swap</span><p>Tags · Story mentions · Refill scans</p></article>
+        </div>
+      </div>
+
+      <div class="brief-and-measure scene">
+        <div class="brief-note">
+          <p class="kicker">Sample brief</p>
+          <h3>Slowood Scent Finder</h3>
+          <p><strong>Audience:</strong> scent-led shoppers / gift shoppers</p>
+          <p><strong>Problem:</strong> Interested in scent products but unsure which one fits.</p>
+          <p><strong>Format:</strong> IG carousel + Story poll + in-store scent prompt.</p>
+          <p><strong>CTA:</strong> Save before your next visit / vote your scent mood.</p>
+        </div>
+        <div class="measurement">
+          <p class="kicker">Measurement</p>
+          <h3>What I would track</h3>
+          <div class="metric-grid">
+            <span>Saves</span><span>Shares</span><span>Poll replies</span><span>Product questions</span><span>QR scans</span><span>Tagged posts</span><span>Opt-ins</span><span>Return code use</span>
+          </div>
+          <p class="fineprint">Proposed measurement framework only. No real campaign results are claimed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="visual-kit" class="visual-kit scene">
+      <div class="section-intro">
+        <p class="kicker">Visual Kit</p>
+        <h2>Campaign touchpoints, not just pretty cards.</h2>
+        <p>Concept mockups for “Start Small with Slowood”. These visuals are portfolio mockups and were not used by Slowood.</p>
+      </div>
+      <div class="mockup-grid">
+        <article class="mock dark"><span>Feed Post</span><h3>Start Small with Slowood</h3><p>One product to try. One scent to test. One refill step to begin.</p></article>
+        <article class="mock coral"><span>XHS Cover</span><h3>First Slowood Basket</h3><p>Gift · Scent · Refill starters</p></article>
+        <article class="mock light"><span>IG Story Poll</span><h3>Which scent mood are you?</h3><div class="polls"><b>Clean</b><b>Woody</b><b>Herbal</b><b>Warm</b></div></article>
+        <article class="mock sage"><span>In-store Prompt</span><h3>One small swap today?</h3><p>Snap your refill or reuse moment. Tag us to be reposted.</p></article>
+        <article class="mock navy"><span>Reward Card</span><h3>Bring a friend next time</h3><p>STARTSMALL10</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact scene">
+      <div>
+        <p class="kicker">Contact</p>
+        <h2>Let’s connect.</h2>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:lirielzhang07@gmail.com">lirielzhang07@gmail.com</a>
+        <a href="https://linkedin.com/in/wenli-zhang-693ba2299">LinkedIn</a>
+        <a href="assets/Wenli_Zhang_CV.pdf" download>Download CV</a>
+        <span>IANG visa · valid until 5 Feb 2027</span>
       </div>
     </section>
   </main>
 
-  <footer class="footer">© <span id="year"></span> Wenli Zhang · Digital Marketing Portfolio</footer>
+  <footer class="footer">© <span id="year"></span> Wenli Zhang · Digital Marketing & Social Content Portfolio</footer>
   <script src="script.js"></script>
 </body>
 </html>

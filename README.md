@@ -2,10 +2,4 @@
 
 Static GitHub Pages portfolio.
 
-Files:
-- index.html
-- style.css
-- script.js
-- assets/Wenli_Zhang_CV.pdf (optional, keep if available)
-
-Upload the files to the root of `lirielzhang.github.io`.
+Upload the contents of this folder to the root of your GitHub Pages repository. Make sure `index.html`, `style.css`, and `script.js` are in the repository root.
