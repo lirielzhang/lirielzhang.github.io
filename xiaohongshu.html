@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiaohongshu Case | Wenli Zhang Portfolio</title>
+  <meta name="description" content="Xiaohongshu content performance and headline generation prototype portfolio case.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><strong>Wenli Zhang</strong><span>Digital Marketing Portfolio</span></a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="slowood.html">Slowood</a>
+      <a href="xiaohongshu.html" aria-current="page">Xiaohongshu</a>
+    </nav>
+  </header>
+  <main>
+    <section class="project-hero clay">
+      <div class="shell narrow">
+        <p class="kicker">Supporting Case</p>
+        <h1>Xiaohongshu Content Performance & Headline Generation Prototype</h1>
+        <p class="lead">A content analytics project exploring how Xiaohongshu post data can support headline optimisation.</p>
+        <p>This project includes public data collection, data cleaning, engagement-based headline review and an AI-assisted headline generation prototype.</p>
+        <div class="chips"><span>RED data collection</span><span>Data cleaning</span><span>Engagement analysis</span><span>Headline pattern review</span><span>Prompt design</span><span>Prototype testing</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="overview-grid">
+          <article class="card"><h3>Project role</h3><p>Data collection and cleaning, sample selection, headline pattern review and prototype support.</p></article>
+          <article class="card"><h3>Marketing problem</h3><p>On Xiaohongshu, headlines affect whether users click, save and interact. The project asks what headline patterns can support stronger content planning.</p></article>
+          <article class="card"><h3>Output</h3><p>A simple AI-assisted headline generation prototype logic, with A/B testing proposed as a future improvement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="shell">
+        <div class="section-head"><p class="kicker">Workflow</p><h2>Data-to-content workflow</h2></div>
+        <div class="flow">
+          <span>Collect public RED posts</span>
+          <span>Clean text and fields</span>
+          <span>Rank by engagement</span>
+          <span>Select useful samples</span>
+          <span>Construct prompt logic</span>
+          <span>Review generated outputs</span>
+        </div>
+        <div class="card-grid three">
+          <article class="card"><h3>Data collection</h3><p>Collected public post data with Python, Selenium, Pandas and Requests.</p></article>
+          <article class="card"><h3>Data cleaning</h3><p>Removed duplicate records, emojis, garbled text and unnecessary fields.</p></article>
+          <article class="card"><h3>Engagement review</h3><p>Reviewed likes, favourites and headline features as engagement signals.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head"><p class="kicker">Analysis</p><h2>Headline pattern matrix</h2></div>
+        <div class="matrix">
+          <article><h3>Benefit</h3><p>Shows what users can eat, buy, visit, save, avoid or learn.</p></article>
+          <article><h3>Specificity</h3><p>Uses location, scenario, price range or identity labels to make relevance clear.</p></article>
+          <article><h3>Curiosity</h3><p>Creates a reason to open the post without misleading the reader.</p></article>
+          <article><h3>Content fit</h3><p>Matches the headline promise with the actual post content.</p></article>
+        </div>
+        <div class="table-card">
+          <div class="table-row head"><span>Signal</span><span>What it suggests</span><span>Content rule</span></div>
+          <div class="table-row"><span>High likes and favourites</span><span>Users responded to the topic or hook</span><span>Keep the promise clear and useful</span></div>
+          <div class="table-row"><span>Specific place or product</span><span>Content is easier to judge and save</span><span>Include location or use case when relevant</span></div>
+          <div class="table-row"><span>Long enough post content</span><span>More context for prompt construction</span><span>Use examples with enough substance</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="shell">
+        <div class="section-head"><p class="kicker">Prototype</p><h2>Prompt logic and output review</h2></div>
+        <div class="prototype-demo">
+          <div>
+            <h3>Input content</h3>
+            <p>今天中午特意带小伙伴们来打卡一家我爱吃的茶餐厅。这家【炳记茶档】真的是香港排队王，好多艺人同行也很爱来打卡。我推荐的第一名就是【猪排多士】，外面脆脆的，里面的肉嫩嫩的有嚼劲。</p>
+          </div>
+          <div>
+            <h3>Generated headline examples</h3>
+            <ol>
+              <li>来香港一定要吃的茶餐厅！炳记猪排多士真的香</li>
+              <li>香港排队王茶档打卡｜猪排多士值得专门来吃吗？</li>
+              <li>第一次来香港别错过这家茶餐厅，猪排多士太上头</li>
+            </ol>
+          </div>
+        </div>
+        <div class="card-grid three">
+          <article class="card"><h3>Marketing takeaways</h3><p>Headline review can become a practical content brief: benefit, specificity and content fit.</p></article>
+          <article class="card"><h3>A/B testing plan</h3><p>Future testing could compare headline angles, length and emotional hooks against click or save behaviour.</p></article>
+          <article class="card"><h3>Limitations</h3><p>Public engagement signals cannot prove full performance. The prototype logic is shown for portfolio explanation, not as a live product.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
