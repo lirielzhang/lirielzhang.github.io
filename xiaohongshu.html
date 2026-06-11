@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xiaohongshu Case | Wenli Zhang Portfolio</title>
+  <title>Xiaohongshu Content Performance & Headline Generation Prototype | Wenli Zhang</title>
   <meta name="description" content="Xiaohongshu content performance and headline generation prototype portfolio case.">
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,88 +20,28 @@
       <a href="xiaohongshu.html" aria-current="page">Xiaohongshu</a>
     </nav>
   </header>
+
   <main>
-    <section class="project-hero clay">
-      <div class="shell narrow">
-        <p class="kicker">Supporting Case</p>
-        <h1>Xiaohongshu Content Performance & Headline Generation Prototype</h1>
-        <p class="lead">A content analytics project exploring how Xiaohongshu post data can support headline optimisation.</p>
-        <p>This project includes public data collection, data cleaning, engagement-based headline review and an AI-assisted headline generation prototype.</p>
-        <div class="chips"><span>RED data collection</span><span>Data cleaning</span><span>Engagement analysis</span><span>Headline pattern review</span><span>Prompt design</span><span>Prototype testing</span></div>
-      </div>
-    </section>
+    <section class="project-hero clay"><div class="shell narrow"><p class="kicker">Content analytics project</p><h1>Xiaohongshu Content Performance & Headline Generation Prototype</h1><p class="lead">A content analytics project exploring how Xiaohongshu post data can support headline optimisation.</p><p>This project includes public data collection, data cleaning, engagement-based headline review and an AI-assisted headline generation prototype.</p><div class="chips"><span>Data collection</span><span>Data cleaning</span><span>Engagement analysis</span><span>Headline review</span><span>Prompt design</span><span>Prototype testing</span></div></div></section>
 
-    <section class="section">
-      <div class="shell">
-        <div class="overview-grid">
-          <article class="card"><h3>Project role</h3><p>Data collection and cleaning, sample selection, headline pattern review and prototype support.</p></article>
-          <article class="card"><h3>Marketing problem</h3><p>On Xiaohongshu, headlines affect whether users click, save and interact. The project asks what headline patterns can support stronger content planning.</p></article>
-          <article class="card"><h3>Output</h3><p>A simple AI-assisted headline generation prototype logic, with A/B testing proposed as a future improvement.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section"><div class="shell"><p class="kicker">01</p><h2>Project Overview</h2><div class="overview-grid"><article class="card"><h3>Goal</h3><p>Explore how public Xiaohongshu post data can support headline optimisation.</p></article><article class="card"><h3>Output</h3><p>A workflow from data cleaning to headline review and prototype logic.</p></article><article class="card"><h3>Evidence</h3><p>Selected screenshots and extracted images from the original project PPT are used as supporting evidence.</p></article></div></div></section>
+    <section class="section alt"><div class="shell narrow"><p class="kicker">02</p><h2>Project Role</h2><p>My work focused on public data collection, data cleaning, engagement-based headline review, prompt construction support and prototype testing logic.</p></div></section>
+    <section class="section"><div class="shell narrow"><p class="kicker">03</p><h2>Marketing Problem</h2><p>Xiaohongshu is a UGC-driven platform where headlines influence whether users click, save or interact with a post. The marketing question is how headline features can be reviewed and turned into usable content guidance.</p></div></section>
 
-    <section class="section alt">
-      <div class="shell">
-        <div class="section-head"><p class="kicker">Workflow</p><h2>Data-to-content workflow</h2></div>
-        <div class="flow">
-          <span>Collect public RED posts</span>
-          <span>Clean text and fields</span>
-          <span>Rank by engagement</span>
-          <span>Select useful samples</span>
-          <span>Construct prompt logic</span>
-          <span>Review generated outputs</span>
-        </div>
-        <div class="card-grid three">
-          <article class="card"><h3>Data collection</h3><p>Collected public post data with Python, Selenium, Pandas and Requests.</p></article>
-          <article class="card"><h3>Data cleaning</h3><p>Removed duplicate records, emojis, garbled text and unnecessary fields.</p></article>
-          <article class="card"><h3>Engagement review</h3><p>Reviewed likes, favourites and headline features as engagement signals.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="shell">
-        <div class="section-head"><p class="kicker">Analysis</p><h2>Headline pattern matrix</h2></div>
-        <div class="matrix">
-          <article><h3>Benefit</h3><p>Shows what users can eat, buy, visit, save, avoid or learn.</p></article>
-          <article><h3>Specificity</h3><p>Uses location, scenario, price range or identity labels to make relevance clear.</p></article>
-          <article><h3>Curiosity</h3><p>Creates a reason to open the post without misleading the reader.</p></article>
-          <article><h3>Content fit</h3><p>Matches the headline promise with the actual post content.</p></article>
-        </div>
-        <div class="table-card">
-          <div class="table-row head"><span>Signal</span><span>What it suggests</span><span>Content rule</span></div>
-          <div class="table-row"><span>High likes and favourites</span><span>Users responded to the topic or hook</span><span>Keep the promise clear and useful</span></div>
-          <div class="table-row"><span>Specific place or product</span><span>Content is easier to judge and save</span><span>Include location or use case when relevant</span></div>
-          <div class="table-row"><span>Long enough post content</span><span>More context for prompt construction</span><span>Use examples with enough substance</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="shell">
-        <div class="section-head"><p class="kicker">Prototype</p><h2>Prompt logic and output review</h2></div>
-        <div class="prototype-demo">
-          <div>
-            <h3>Input content</h3>
-            <p>今天中午特意带小伙伴们来打卡一家我爱吃的茶餐厅。这家【炳记茶档】真的是香港排队王，好多艺人同行也很爱来打卡。我推荐的第一名就是【猪排多士】，外面脆脆的，里面的肉嫩嫩的有嚼劲。</p>
-          </div>
-          <div>
-            <h3>Generated headline examples</h3>
-            <ol>
-              <li>来香港一定要吃的茶餐厅！炳记猪排多士真的香</li>
-              <li>香港排队王茶档打卡｜猪排多士值得专门来吃吗？</li>
-              <li>第一次来香港别错过这家茶餐厅，猪排多士太上头</li>
-            </ol>
-          </div>
-        </div>
-        <div class="card-grid three">
-          <article class="card"><h3>Marketing takeaways</h3><p>Headline review can become a practical content brief: benefit, specificity and content fit.</p></article>
-          <article class="card"><h3>A/B testing plan</h3><p>Future testing could compare headline angles, length and emotional hooks against click or save behaviour.</p></article>
-          <article class="card"><h3>Limitations</h3><p>Public engagement signals cannot prove full performance. The prototype logic is shown for portfolio explanation, not as a live product.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section alt"><div class="shell"><p class="kicker">04</p><h2>Data Workflow</h2><div class="flow"><span>Data collection</span><span>Data cleaning</span><span>Engagement sorting</span><span>Headline review</span><span>Prompt construction</span><span>Headline generation</span><span>Output review</span></div></div></section>
+    <section class="section"><div class="shell split"><div><p class="kicker">05</p><h2>Data Collection</h2><p>Public post data was collected with Python, Selenium, Pandas and Requests. The workflow used public content examples as a learning material for headline review, not private platform analytics.</p></div><figure><img src="assets/ppt/image11.png" alt="PPT screenshot of data collection code"><figcaption>PPT evidence: data collection code screenshot.</figcaption></figure></div></section>
+    <section class="section alt"><div class="shell split"><div><p class="kicker">06</p><h2>Data Cleaning</h2><p>The dataset was cleaned by removing duplicates, cleaning text, removing irrelevant fields and sorting by likes/favourites to prepare an analysis-ready sample.</p><div class="flow compact"><span>Raw data</span><span>Remove duplicates</span><span>Clean text</span><span>Remove fields</span><span>Sort by likes/favourites</span></div></div><figure><img src="assets/ppt/image15.png" alt="PPT screenshot of cleaned data table"><figcaption>PPT evidence: cleaned data table from the original deck.</figcaption></figure></div></section>
+    <section class="section"><div class="shell"><p class="kicker">07</p><h2>Engagement-Based Headline Review</h2><p>The review used likes and favourites as visible engagement signals. These are directional signals only and do not prove causal performance.</p><div class="bar-chart"><div><span style="width:92%"></span><b>Must-try / recommendation angle</b></div><div><span style="width:76%"></span><b>Specific location angle</b></div><div><span style="width:68%"></span><b>List / ranking angle</b></div><div><span style="width:54%"></span><b>First-person experience angle</b></div></div><p class="note">Directional engagement signal summary from sampled posts, not a full platform benchmark.</p></div></section>
+    <section class="section alt"><div class="shell"><p class="kicker">08</p><h2>Headline Pattern Matrix</h2><div class="matrix"><article><h3>Benefit</h3><p>Shows what users can eat, buy, visit, save, avoid or learn.</p></article><article><h3>Specificity</h3><p>Uses location, price, scenario or identity labels.</p></article><article><h3>Curiosity</h3><p>Creates a reason to open the post without misleading the reader.</p></article><article><h3>Content Fit</h3><p>Checks whether the title promise matches the actual post.</p></article></div></div></section>
+    <section class="section"><div class="shell"><p class="kicker">09</p><h2>Engagement Signal Summary</h2><div class="table-card cols-3"><div class="table-row head"><span>Signal</span><span>What it suggests</span><span>Review rule</span></div><div class="table-row"><span>High likes/favourites</span><span>Users responded to topic or hook</span><span>Review title-content fit before using as example</span></div><div class="table-row"><span>Specific place or product</span><span>Content is easier to judge and save</span><span>Keep context clear</span></div><div class="table-row"><span>Long enough content</span><span>More useful for prompt examples</span><span>Use examples with enough substance</span></div></div></div></section>
+    <section class="section alt"><div class="shell split"><div><p class="kicker">10</p><h2>Prompt Construction</h2><p>Prompt logic connected content input, platform context, example headline patterns, tone rules, generated options and human review.</p><div class="flow compact"><span>Content input</span><span>Platform context</span><span>Example patterns</span><span>Tone rules</span><span>Generated options</span><span>Human review</span></div></div><figure><img src="assets/ppt/image21.png" alt="PPT screenshot of prompt construction"><figcaption>PPT evidence: prompt construction screenshot.</figcaption></figure></div></section>
+    <section class="section"><div class="shell split"><div><p class="kicker">11</p><h2>Prototype</h2><p>The prototype was a small web application logic for generating several Xiaohongshu-style headline options from input content. This is shown as prototype evidence, not as a live product.</p></div><figure><img src="assets/ppt/image35.png" alt="PPT screenshot of prototype interface"><figcaption>PPT evidence: prototype interface and generated outputs.</figcaption></figure></div></section>
+    <section class="section alt"><div class="shell"><p class="kicker">12</p><h2>Example Output Review</h2><div class="prototype-demo"><div><h3>Original content</h3><p>今天中午特意带小伙伴们来打卡一家我爱吃的茶餐厅。这家【炳记茶档】真的是香港排队王。我推荐的第一名就是【猪排多士】。</p></div><div><h3>Generated options</h3><ol><li>来香港一定要吃的茶餐厅！炳记猪排多士真的香</li><li>香港排队王茶档打卡｜猪排多士值得专门来吃吗？</li><li>第一次来香港别错过这家茶餐厅，猪排多士太上头</li></ol></div></div><div class="table-card cols-3"><div class="table-row head"><span>Review criterion</span><span>Question</span><span>Use in content work</span></div><div class="table-row"><span>Benefit</span><span>Does the title make the user value clear?</span><span>Keep or strengthen</span></div><div class="table-row"><span>Specificity</span><span>Does it include place/product/scenario?</span><span>Add context if needed</span></div><div class="table-row"><span>Content fit</span><span>Does it match the post?</span><span>Reject misleading options</span></div></div></div></section>
+    <section class="section"><div class="shell narrow"><p class="kicker">13</p><h2>Marketing Takeaways</h2><p>The main value is not the AI tool itself. The value is a content workflow: public Xiaohongshu data → data cleaning → engagement-based headline review → prompt logic → generated options → human review.</p></div></section>
+    <section class="section alt"><div class="shell narrow"><p class="kicker">14</p><h2>Proposed A/B Testing Plan</h2><p>Future testing could compare headline angles, length and specificity while keeping post content constant. Metrics could include click-through, saves, comments and qualitative feedback.</p></div></section>
+    <section class="section"><div class="shell"><p class="kicker">15</p><h2>KPI Framework</h2><div class="kpi-strip"><span>Click interest</span><span>Saves</span><span>Comments</span><span>Title-content fit review</span><span>Variant comparison</span></div></div></section>
+    <section class="section alt"><div class="shell narrow"><p class="kicker">16</p><h2>Project Limitations</h2><p>Public engagement signals are incomplete. Likes and favourites can suggest useful patterns but cannot prove why a post performed well. The prototype requires human review and future testing before practical use.</p></div></section>
+    <section class="section"><div class="shell narrow"><p class="kicker">17</p><h2>Project Summary</h2><p>This project shows a content analytics workflow for headline optimisation: collect public data, clean it, review engagement signals, construct prompt logic and evaluate generated options with marketing judgment.</p></div></section>
   </main>
 </body>
 </html>
