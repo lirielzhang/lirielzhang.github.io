@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiaohongshu Headline Optimisation | Wenli Zhang</title>
+  <meta name="description" content="Xiaohongshu headline optimisation portfolio case.">
+  <meta name="theme-color" content="#20382E">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260617ppt">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><strong>Wenli Zhang</strong><span>Digital Marketing Portfolio</span></a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="slowood.html">Slowood</a>
+      <a href="xiaohongshu.html" aria-current="page">Xiaohongshu</a>
+      <a href="index.html#contact">Contact Me</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="project-hero clay"><div class="shell narrow"><h1>Xiaohongshu Headline Optimisation</h1><p class="lead">A content analytics workflow using RED post examples, engagement signals and headline pattern review.</p></div></section>
+
+    <section class="section"><div class="shell narrow"><h2>Project Overview</h2><p>This project explores how Xiaohongshu / RED public post examples and engagement signals can support headline optimisation.</p><p>Rather than treating AI generation as the final answer, the project uses headline pattern review and prompt rules to create testable title options for human review.</p></div></section>
+    <section class="section alt"><div class="shell narrow"><h2>Marketing Problem</h2><p>On Xiaohongshu, the headline works as a traffic hook. It needs to signal the topic clearly, match user search intent, create curiosity or usefulness, fit platform language and encourage users to click or save.</p><blockquote>How can public post examples and engagement signals be translated into a repeatable headline optimisation workflow?</blockquote></div></section>
+    <section class="section"><div class="shell"><h2>Source Headline Review</h2><div class="headline-card-grid"><article>
+      <h3>来香港一定要吃的！！！！</h3><div><span>emotional hook</span></div><p>Strong hook, but information is not specific enough.</p>
+    </article><article>
+      <h3>融合市集风格的泰国餐厅</h3><div><span>category cue</span></div><p>Clear product/category cue; can be stronger with location.</p>
+    </article><article>
+      <h3>旅游香港不得不吃！！！</h3><div><span>scenario cue</span></div><p>Travel scenario is clear, but wording may sound exaggerated.</p>
+    </article><article>
+      <h3>旺角性价比超高放题</h3><div><span>location + value cue</span></div><p>Clear location and value cue; useful for search and testing.</p>
+    </article></div></div></section>
+    <section class="section alt"><div class="shell"><h2>Content-to-Headline Workflow</h2><div class="html-figure numbered-timeline"><article><span>1</span><p>Collect RED post examples</p></article><article><span>2</span><p>Read engagement signals</p></article><article><span>3</span><p>Code headline patterns</p></article><article><span>4</span><p>Turn patterns into prompt rules</p></article><article><span>5</span><p>Draft headline options</p></article><article><span>6</span><p>Review for platform fit</p></article></div></div></section>
+    <section class="section compact-section"><div class="shell narrow"><h2>Data Preparation</h2><p>Public post examples were collected and cleaned before headline review. Duplicate records, emojis, garbled text and irrelevant fields were removed to make the dataset easier to compare.</p><div class="compact-list"><span>Python</span><span>Pandas</span><span>Selenium</span><span>Data Cleaning</span></div></div></section>
+    <section class="section alt"><div class="shell"><h2>Headline Pattern Matrix</h2><div class="html-figure xhs-table">
+      <div class="xhs-row xhs-head"><span>Headline Feature</span><span>Marketing Function</span><span>Example Use</span></div>
+      <div class="xhs-row"><span>Location cue</span><span>Improves relevance / search fit</span><span>香港 / 中環 / 旺角</span></div><div class="xhs-row"><span>List / guide format</span><span>Makes content saveable</span><span>必吃 / 攻略 / 清單</span></div><div class="xhs-row"><span>Value cue</span><span>Reduces decision cost</span><span>性价比 / 人均 / 值得试</span></div><div class="xhs-row"><span>Scenario cue</span><span>Connects to user need</span><span>旅游 / 市集 / 放题</span></div><div class="xhs-row"><span>Emotional hook</span><span>Creates click motivation</span><span>一定要 / 不得不 / 超高</span></div>
+    </div></div></section>
+    <section class="section"><div class="shell"><h2>Prototype Evidence</h2><div class="evidence-layout">
+      <div class="browser-frame xhs-shot"><img src="assets/reference/xhs_generator_blank.png" alt="Blank Xiaohongshu headline generator interface."></div>
+      <div class="evidence-notes">
+        <h3>Prototype Evidence</h3>
+        <ul class="finding-list">
+          <li>Input content is pasted into the tool.</li>
+          <li>Headline options are generated for review.</li>
+          <li>Outputs still require human editing and factual checks.</li>
+          <li>Project value is workflow support, not automatic publishing.</li>
+        </ul>
+        <div class="evidence-thumbs">
+          <img src="assets/reference/xhs_generator_cha_chaan.png" alt="Generated headline options for a Hong Kong food post.">
+          <img src="assets/reference/xhs_generator_foodhall.png" alt="Generated headline options for a Thai boat noodle post.">
+        </div>
+      </div>
+    </div></div></section>
+    <section class="section alt"><div class="shell"><h2>Output Review</h2><div class="output-review-layout">
+      <div class="browser-frame xhs-shot"><img src="assets/reference/xhs_generator_food_list.png" alt="Generated headline options for a Hong Kong restaurant list post."></div>
+      <div class="html-figure xhs-table output-table">
+        <div class="xhs-row xhs-head output-row"><span>Output type</span><span>Strength</span><span>Risk</span><span>Marketing judgement</span></div>
+        <div class="xhs-row output-row"><span>High-emotion food headline</span><span>Strong click motivation</span><span>May sound exaggerated</span><span>Useful for testing, needs human editing</span></div><div class="xhs-row output-row"><span>Location/value headline</span><span>Clearer search cue</span><span>Needs factual check</span><span>Suitable for A/B testing</span></div><div class="xhs-row output-row"><span>Restaurant recommendation headline</span><span>Easy to understand</span><span>May lack specificity</span><span>Improve with place or dish cue</span></div><div class="xhs-row output-row"><span>List-style food guide</span><span>Saveable and scannable</span><span>Must verify every claim</span><span>Good candidate for guide-format testing</span></div>
+      </div>
+    </div>
+    <p class="section-copy">AI-assisted headlines are treated as testable options, not final answers.</p></div></section>
+    <section class="section"><div class="shell"><h2>Prompt Rules</h2><div class="html-figure xhs-table prompt-table">
+      <div class="xhs-row xhs-head"><span>Pattern</span><span>Prompt rule</span><span>Human check</span></div>
+      <div class="xhs-row"><span>Location cue</span><span>Include place context</span><span>Check specificity</span></div><div class="xhs-row"><span>Guide format</span><span>Frame as list or guide</span><span>Check saveability</span></div><div class="xhs-row"><span>Value cue</span><span>Mention price/value only when supported</span><span>Check accuracy</span></div><div class="xhs-row"><span>Scenario cue</span><span>Match use case</span><span>Check relevance</span></div><div class="xhs-row"><span>Emotional hook</span><span>Create curiosity without exaggeration</span><span>Check tone</span></div>
+    </div></div></section>
+    <section class="section alt"><div class="shell"><h2>Original vs Draft Review</h2><div class="html-figure xhs-table review-table">
+      <div class="xhs-row xhs-head review-row"><span>Option</span><span>Headline</span><span>Marketing judgement</span><span>Use for testing?</span></div>
+      <div class="xhs-row review-row"><span>Original</span><span>来香港一定要吃的！！！！</span><span>Strong emotional hook; low specificity</span><span>Baseline only</span></div><div class="xhs-row review-row"><span>Draft A</span><span>来香港必吃美食：绝不会让你失望的炒肠粉</span><span>Clearer food cue; needs factual check</span><span>Yes</span></div><div class="xhs-row review-row"><span>Draft B</span><span>香港美食第一站：人均20元的炒肠粉！</span><span>Adds value cue; price must be verified</span><span>Yes</span></div>
+    </div></div></section>
+    <section class="section alt"><div class="shell narrow"><h2>A/B Testing Plan</h2><ul class="finding-list"><li>Select 10 to 20 content pieces.</li><li>Generate 3 to 5 headline options for each piece.</li><li>Manually screen for relevance and platform fit.</li><li>Track saves, clicks, likes, comments and reading completion where available.</li></ul></div></section>
+    <section class="section"><div class="shell narrow"><h2>Limitations</h2><ul class="finding-list"><li>Public engagement signals do not explain the full reason behind post performance.</li><li>Likes and saves are useful signals, but they are not conversion data.</li><li>Generated headlines still require human editing and brand judgment.</li><li>A/B testing would be needed to validate performance.</li></ul></div></section>
+    <section class="section alt"><div class="shell narrow"><h2>Project Summary</h2><p>This project demonstrates a content optimisation workflow, not an automatic publishing tool. The main value is using platform examples and engagement signals to support faster ideation, human review and future A/B testing.</p></div></section>
+  </main>
+</body>
+</html>
